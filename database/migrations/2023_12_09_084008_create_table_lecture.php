@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('table_lecture', function (Blueprint $table) {
             $table->id();
-            $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('histoire_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('histoire_id');
             $table->integer('sequence');
             $table->timestamps();
-            $table->foreign('histoire_id')->references('id')->on('histoire');
+            $table->foreign('histoire_id')->references('id')->on('histoires');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

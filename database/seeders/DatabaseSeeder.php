@@ -28,7 +28,15 @@ class DatabaseSeeder extends Seeder
         DB::table('genres')->insert([
             'label' => "Comics"
         ]);
-
+        DB::table('genres')->insert([
+            'label' => "Policier"
+        ]);
+        DB::table('genres')->insert([
+            'label' => "Drame"
+        ]);
+        DB::table('genres')->insert([
+            'label' => "Comédie"
+        ]);
 
         DB::table('histoires')->insert([
             'titre' => 'z1 ou la vie d\'un demi-octet',
@@ -301,33 +309,43 @@ organique et robotique. En route...",
         ]);
 
 
+        $nb_histoires = 20;
+        for($i = 3; $i <= $nb_histoires; $i++) {
+            DB::table('histoires')->insert([
+                'titre' => "l'histoire vide 1",
+                'pitch' => "Ben il n'y a rien on vous dit",
+                'photo'  => "https://bathboxoffice.org.uk/wp-content/uploads/2017/10/the-octet-logo-mall-2.jpg",
+                'user_id' => rand(1, $nb_users),
+                'active'=>1,
+            ]);
+
+            // A
+            DB::table('chapitres')->insert([
+                'titrecourt' => 'Rien ',
+                'texte' => "Ca commence ici...  ca s'arrête ici",
+                'histoire_id'  => $i,
+                'premier' => 1
+            ]);
+
+        }
+
         for($i = 1; $i <= $nb_users; $i++) {
+            for($j = 1; $j <= $nb_histoires; $j += 1) {
+                if (rand(0, 10) > 7)
+                    DB::table("avis")->insert([
+                        "histoire_id" => $j,
+                        "user_id" => $i,
+                        "positif" => rand(0, 1)
+                    ]);
 
-            if(rand(0,10) > 7)
-                DB::table("avis")->insert([
-                    "histoire_id" => 1,
-                    "user_id" => $i,
-                    "positif"=>rand(0,1)
-                ]);
+                if (rand(0, 10) > 7)
+                    DB::table("terminee")->insert([
+                        "histoire_id" => $j,
+                        "user_id" => $i,
+                        "nombre" => rand(1, 5)
+                    ]);
+            }
 
-            if(rand(0,10) > 7)
-            DB::table("terminee")->insert([
-                "histoire_id" => 1,
-                "user_id" => $i,
-                "nombre"=>rand(1,5)
-            ]);
-            if(rand(0,10) > 7)
-                DB::table("avis")->insert([
-                "histoire_id" => 2,
-                "user_id" => $i,
-                "positif"=>rand(0,1)
-            ]);
-            if(rand(0,10) > 7)
-            DB::table("terminee")->insert([
-                "histoire_id" => 2,
-                "user_id" =>  $i,
-                "nombre"=>rand(1,5)
-            ]);
 
         }
     }
