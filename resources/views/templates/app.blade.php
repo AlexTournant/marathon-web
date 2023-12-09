@@ -11,7 +11,9 @@
 <header>Ma super application</header>
 <nav>
     <a href="{{route('index')}}">Accueil</a>
-    @auth
+    <a href="#">Contact</a>
+
+@auth
         {{Auth::user()->name}}
         <a href="{{route("logout")}}"
            onclick="document.getElementById('logout').submit(); return false;">Logout</a>
