@@ -14,10 +14,10 @@ class Chapitre extends Model
     }
 
     public function suites() {
-        return $this->belongsToMany(Chapitre::class, "suite", "chapitre_src_id", "chapitre_dest_id")->withPivot('reponse');;
+        return $this->belongsToMany(Chapitre::class, "suite", "chapitre_source_id", "chapitre_destination_id")->withPivot('reponse');;
     }
 
     public function pere() {
-        return Chapitre::whereRaw("id in (SELECT chapitre_source_id from suite WHERE chapitre_dest_id=$this->id)")->first();
+        return Chapitre::whereRaw("id in (SELECT chapitre_source_id from suite WHERE chapitre_destination_id=$this->id)")->first();
     }
 }
