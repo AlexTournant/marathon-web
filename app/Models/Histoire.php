@@ -9,7 +9,6 @@ class Histoire extends Model
 {
     use HasFactory;
 
-    protected $table = "histories";
 
     public function user() {
         return $this->belongsTo(User::class);
