@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         $nb_users = 50;
         for($i = 1; $i <= $nb_users; $i++)
             DB::table('users')->insert([
-            'name' => "user_$i",
-            'email' => "user_$i@gmail.com",
+            'name' => "user$i",
+            'email' => "user$i@gmail.com",
             'password' => $azerty,
         ]);
 
