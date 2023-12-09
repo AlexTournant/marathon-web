@@ -258,6 +258,7 @@ organique et robotique. En route...",
 
         //-------------
 
+
         DB::table('suite')->insert([
             'chapitre_source_id' => 8 ,
             'chapitre_destination_id' => 9,
@@ -331,12 +332,5 @@ organique et robotique. En route...",
         }
     }
 
-
-
-    /*A->B->D
-    A->B->E
-    A->C->F
-    A->C->G
-    */
 
 }
