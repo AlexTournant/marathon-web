@@ -312,7 +312,7 @@ organique et robotique. En route...",
         $nb_histoires = 20;
         for($i = 3; $i <= $nb_histoires; $i++) {
             DB::table('histoires')->insert([
-                'titre' => "l'histoire vide 1",
+                'titre' => "l'histoire vide $i",
                 'pitch' => "Ben il n'y a rien on vous dit",
                 'photo'  => "https://bathboxoffice.org.uk/wp-content/uploads/2017/10/the-octet-logo-mall-2.jpg",
                 'user_id' => rand(1, $nb_users),
