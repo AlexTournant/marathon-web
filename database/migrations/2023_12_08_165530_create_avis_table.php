@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('histoire_id');
-            $table->boolean('positif');
             $table->timestamps();
             $table->foreign('histoire_id')->references('id')->on('histoires');
             $table->foreign('user_id')->references('id')->on('users');
