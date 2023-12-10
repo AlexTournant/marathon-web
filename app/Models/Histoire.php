@@ -27,7 +27,7 @@ class Histoire extends Model
     }
 
     public function avis() {
-        return $this->belongsToMany(User::class, "avis", "histoire_id", "user_id")->withPivot("reponse");
+        return $this->belongsToMany(User::class, "avis", "histoire_id", "user_id");
     }
 
     public function terminees() {
