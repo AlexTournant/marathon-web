@@ -1,66 +1,158 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Histoires dont vous êtes le héros
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Groupe test but23_groupeTT
 
-## About Laravel
+## Version initiale
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Pour lancer avec succès une première version de votre site web pendant la phase de développement, il faut exécuter les
+commandes suivantes sur votre machine de développement :
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```shell
+# A partir de la racine de votre projet
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# installation des dépendances
+composer install 
 
-## Learning Laravel
+# installation des outils pour la construction du front
+npm install 
+# Modification du front en cours de développement
+npm run dev
+# Construction du front pour la version exploitation
+npm run build
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# liaison avec le SGBD et la base de données utilisée
+cp .env.example .env
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#########################################################
+#
+# Ici il faut modifier en particulier les variables suivantes
+#
+# DB_CONNECTION=mysql
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=marathon_22
+# DB_USERNAME=root
+# DB_PASSWORD=
+#
+#
+#########################################################
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# Génération de la clé initiale
 
-## Laravel Sponsors
+php artisan key:generate
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+# génération des tables dans votre base de données
 
-### Premium Partners
+php artisan migrate
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+# ou pour ré-initialiser
 
-## Contributing
+php artisan migrate:fresh
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Initialisation des données de départ
 
-## Code of Conduct
+cp -r resources/images storage/app/public
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Création du lien physique en storage/app/public et public/storage
 
-## Security Vulnerabilities
+php artisan storage:link
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Ajout de données aléatoire dans les tables de la base de données
 
-## License
+php artisan db:seed
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Lancement de l'application web pour le développement
+
+php artisan serve
+```
+
+Si toutes les commandes précédentes ont été exécutées, votre application doit être accessible à
+l'adresse [http://localhost:8000](http://localhost:8000)
+
+## Le déploiement sur la machine marathon
+
+Chaque modification de la branche main de votre projet sur [gitlab](https://gitlab.univ-artois.fr) entraine le
+déploiement de votre site sur la machine marathon.
+
+### Création des variables d'environnement
+
+Pour que le déploiement se déroule bien, il faut configurer deux variables dans votre projet sur gitlab.
+
+- Une variable `NAME` qui doit contenir votre nom de login sur la machine marathon qui vous a été délivré en début de
+  marathon.
+- Une variable `SSH_PRIVATE_KEY` qui doit contenir votre clé privée qui a été calculée pour vous et qui se trouve dans
+  le fichier `~/.ssh/id_rsa` sur la machine marathon.
+
+Pour modifier ces 2 variables, il faut
+
+1. afficher dans votre navigateur, la page de votre projet sur gitlab.
+
+   ![](./resources/docs/images/projet_gitlab.png)
+
+2. Puis sélectionner _Paramètres_ ou _Setting_ et l'entrée _intégration et livraisons continues_ ou _CI/CD_.
+
+   ![](./resources/docs/images/entree_variables.png)
+
+3. Créez la variable `NAME`
+
+   ![](./resources/docs/images/cle_name.png)
+4. Créez la variable `SSH_PRIVATE_KEY`
+
+   ![](./resources/docs/images/cle_ssh_private_key.png)
+
+### Commandes sur la machine marathon
+
+Lors du premier déploiement, vous devez initialiser l'environnement de votre site sur le serveur marathon.
+
+Comme, la connexion avec la base de données.
+Pour cela, vous devez à nouveau modifier le fichier `.env`.
+
+Les commandes à taper lors du premier déploiement :
+
+```shell
+# liaison avec le SGBD et la base de données utilisée
+cp .env.example .env
+
+#########################################################
+#
+# Ici il faut modifier en particulier les variables suivantes
+#
+# DB_CONNECTION=mysql
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=but22_groupeXX
+# DB_USERNAME=but22_groupeXX
+# DB_PASSWORD=password_but22_groupeXX
+#
+#
+#########################################################
+
+# Génération de la clé initiale
+
+php artisan key:generate
+
+# génération des tables dans votre base de données
+
+php artisan migrate
+
+# ou pour ré-initialiser
+
+php artisan migrate:fresh
+
+# Initialisation des données de départ
+
+cp -r resources/images storage/app/public
+
+# Création du lien physique en storage/app/public et public/storage
+
+php artisan storage:link
+
+# Ajout de données aléatoire dans les tables de la base de données
+
+php artisan db:seed
+
+```
+
+À partir de là, votre site doit être visible avec l'url : `http://marathon/~but23_groupeXX` avec `XX` votre numéro
+de groupe.
+
