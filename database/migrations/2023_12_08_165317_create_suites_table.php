@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('suite', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('chapitre_source_id');
-            $table->unsignedBigInteger('chapitre_destination_id');
+        Schema::create('suites', function (Blueprint $table) {
+            $table->foreignId('chapitre_source_id');
+            $table->foreignId('chapitre_destination_id');
             $table->text('reponse');
-            $table->timestamps();
             $table->foreign('chapitre_source_id')->references('id')->on('chapitres');
             $table->foreign('chapitre_destination_id')->references('id')->on('chapitres');
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('suite');
+        Schema::dropIfExists('suites');
     }
 };

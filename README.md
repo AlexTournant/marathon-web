@@ -23,6 +23,7 @@ npm run build
 # liaison avec le SGBD et la base de données utilisée
 cp .env.example .env
 
+
 #########################################################
 #
 # Ici il faut modifier en particulier les variables suivantes

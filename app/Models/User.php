@@ -25,6 +25,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Histoire::class, "terminee", "user_id", "histoire_id")->withPivot("nombre");
     }
 
+    public function lectures() {
+        return $this->belongsToMany(Histoire::class,'lectures')->using(Lecture::class);
+    }
+
 
     /**
      * The attributes that are mass assignable.

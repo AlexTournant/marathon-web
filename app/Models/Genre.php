@@ -9,7 +9,8 @@ class Genre extends Model
 {
     use HasFactory;
 
+    public $timestamps=false;
     public function histoires() {
-        return $this->hasMany(Histoires::class);
+        return $this->hasMany(Histoire::class);
     }
 }

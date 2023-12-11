@@ -1,0 +1,57 @@
+@startuml
+hide empty members
+'top to bottom direction
+
+class Avis {
+   contenu: string
+}
+
+class Chapitre {
+   titre: string
+   titrecourt: string
+   texte: string
+   media: string
+   question: string
+   premier: boolean
+}
+
+class Genre {
+   label: string
+}
+class Histoire {
+   titre: string
+   pitch: string
+   photo: string
+   active: boolean
+}
+
+class Suite {
+   reponse: string
+}
+class Lecture {
+   sequence: array
+}
+class Terminee {
+   nombre: number
+}
+class User {
+   id: number
+   name: string
+   email: string
+   password: string
+}
+
+User o-- "*" Histoire :auteur
+User "*" -- "*" Histoire  : parcours
+Histoire "1" -down- "*" Avis
+Avis "*" -- "1" User
+Histoire *-- "1..*" Chapitre : contient
+Histoire "*" -- "1" Genre
+(User, Histoire) .. Lecture
+
+<> diamond
+Suite . diamond
+diamond -down- "precedents 0..*" Chapitre
+diamond -- "suivants 0..*" Chapitre
+
+@enduml
