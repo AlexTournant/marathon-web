@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             'titre' => 'z1 ou la vie d\'un demi-octet',
             'pitch' => "z1 n'a pas une vie très compliquée. Quelque soit la question, la réponse se limite à 0 ou 1. 
              En même temps, cela lui permet au mois de représenter des nombres en mode binaire. C'est déjà cela !",
-            'photo'  => "https://bathboxoffice.org.uk/wp-content/uploads/2017/10/the-octet-logo-mall-2.jpg",
+            'photo'  => "/images/bit-1.webp",
             'user_id' => 1,
             'active'=>1,
         ]);
@@ -174,7 +174,7 @@ intelligente, de George Clooney version Asimov.
 
 
 Au seuil de l&#39;atelier, il dut se résoudre à faire ce pour quoi il était pourtant programmé,
-demander de l&#39;aide. Issu de la dernière génération des robots dotés d&#39;intelligence artificielle
+demander de l&#39;aide. Issu de la dernière génération des robots dotés d'intelligence artificielle
 créée derrière les hauts murs du Consortium Robotique International Libertaire, le CRIL, une
 forteresse classée AAA dans les milieux autorisés, il avait appris à choisir.",
             'histoire_id'  => 2,
@@ -187,8 +187,8 @@ monde nouveau, FredH, FredB et FredZ ?",
         // 9
         DB::table('chapitres')->insert([
             'titrecourt' => 'Boum !',
-            'texte' => "La sonnette eut à peine le temps de retentir qu&#39;une déflagration d&#39;une violence
-sismique marqua d&#39;une fine rayure son Kevlar renforcé et explosa totalement son
+            'texte' => "La sonnette eut à peine le temps de retentir qu'une déflagration d'une violence
+sismique marqua d'une fine rayure son Kevlar renforcé et explosa totalement son
 réseau neuronal artificiel en même temps que tout le réseau synaptique de synthèse
 associé. Il avait cédé à la plus ancienne des ruses développées par les SolBots,
 compter sur un réflexe d’humain : sonner à une porte. Le piège était grossier, il était
@@ -203,7 +203,7 @@ mourait d’avoir trop ressemblé aux hommes. **Fin de partie.**",
         DB::table('chapitres')->insert([
             'titrecourt' => 'Dring !',
             'texte' => "La sonnerie du téléphone ne fit que retentir dans un silence assourdissant qui lui
-pesa tant qu&#39;il ressentit une solitude poisseuse, presque philosophique. Rien à faire, il
+pesa tant qu'il ressentit une solitude poisseuse, presque philosophique. Rien à faire, il
 entendait cette musique ultrasonique et familière de la tentative de connexion
 neuronale, celle qui avait remplacé les appels classiques. Rien, le néant, le vide
 sidéral.",
@@ -217,7 +217,7 @@ sidéral.",
         //11
         DB::table('chapitres')->insert([
             'titrecourt' => 'Help !',
-            'texte' => "Les Oracles se tournèrent lentement vers lui, les yeux aussi verts qu&#39;une ligne de code sur
+            'texte' => "Les Oracles se tournèrent lentement vers lui, les yeux aussi verts qu'une ligne de code sur
 un MO5 et l’écoutèrent attentivement. Après de longs palabres dans une langue connue
 d’eux seuls, ils consentirent à lui répondre dans une langue commune. Ils s’avouaient
 dépassés, il fallait consulter d’autres devins, capables d’autres formes de divinations, Blam
@@ -314,7 +314,7 @@ organique et robotique. En route...",
             DB::table('histoires')->insert([
                 'titre' => "l'histoire vide $i",
                 'pitch' => "Ben il n'y a rien on vous dit",
-                'photo'  => "https://bathboxoffice.org.uk/wp-content/uploads/2017/10/the-octet-logo-mall-2.jpg",
+                'photo'  => "/images/bit-1.webp",
                 'user_id' => rand(1, $nb_users),
                 'active'=>1,
             ]);
@@ -335,7 +335,6 @@ organique et robotique. En route...",
                     DB::table("avis")->insert([
                         "histoire_id" => $j,
                         "user_id" => $i,
-                        "positif" => rand(0, 1)
                     ]);
 
                 if (rand(0, 10) > 7)
@@ -345,8 +344,6 @@ organique et robotique. En route...",
                         "nombre" => rand(1, 5)
                     ]);
             }
-
-
         }
     }
 
