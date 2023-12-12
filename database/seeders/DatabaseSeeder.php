@@ -171,16 +171,16 @@ _V1_UY1200_CR111,0,630,1200_AL_.jpg",
             'texte' => "Le robot, privé de certains capteurs sensoriels, vivait particulièrement mal sa désorientation
 temporo-spatiale. Son degré de sensibilité était devenu très élevé avec la mise à jour 2187
 version THX 1138. Cette légère défaillance le désobligeait, autant techniquement que parce
-qu&#39;elle ternissait sa réputation de modèle incomparable, de must de la robotique
+qu'elle ternissait sa réputation de modèle incomparable, de must de la robotique
 intelligente, de George Clooney version Asimov.
 
 
-Au seuil de l&#39;atelier, il dut se résoudre à faire ce pour quoi il était pourtant programmé,
-demander de l&#39;aide. Issu de la dernière génération des robots dotés d'intelligence artificielle
+Au seuil de l'atelier, il dut se résoudre à faire ce pour quoi il était pourtant programmé,
+demander de l'aide. Issu de la dernière génération des robots dotés d'intelligence artificielle
 créée derrière les hauts murs du Consortium Robotique International Libertaire, le CRIL, une
 forteresse classée AAA dans les milieux autorisés, il avait appris à choisir.",
             'histoire_id'  => 2,
-            "question" => "Sonner ? Téléphoner ? Demander conseil aux trois Fred, les oracles technologiques d&#39;un
+            "question" => "Sonner ? Téléphoner ? Demander conseil aux trois Fred, les oracles technologiques d'un
 monde nouveau, FredH, FredB et FredZ ?",
             "media" => "https://www.cril-limouzi.com/img/lgm-production-logo-1505993315.jpg",
             'premier' => 1
