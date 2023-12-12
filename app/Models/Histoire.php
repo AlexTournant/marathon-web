@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Histoire extends Model
 {
@@ -18,8 +19,11 @@ class Histoire extends Model
         return $this->hasMany(Chapitre::class);
     }
 
+    /**
+     * @return Model|HasMany|object|null
+     */
     public function premier() {
-        return $this->chapitres()->where("premier", 1)->first();
+        return $this->chapitres()->where("premier", true)->first();
     }
 
     public function genre() {
@@ -27,7 +31,7 @@ class Histoire extends Model
     }
 
     public function avis() {
-        return $this->belongsToMany(User::class, "avis", "histoire_id", "user_id");
+        return $this->hasMany(Avis::class);
     }
 
     public function terminees() {

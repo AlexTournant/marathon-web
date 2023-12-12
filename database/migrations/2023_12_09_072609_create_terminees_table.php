@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('avis', function (Blueprint $table) {
-            $table->id();
-            $table->string('contenu');
+        Schema::create('terminees', function (Blueprint $table) {
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Histoire::class);
-            $table->timestamps();
+            $table->integer('nombre');
         });
     }
 
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('avis');
+        Schema::dropIfExists('terminees');
     }
 };

@@ -17,11 +17,8 @@ return new class extends Migration
             $table->text('pitch');
             $table->string('photo');
             $table->boolean('active');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('genre_id')->nullable();
-            $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->foreignIdFor(\App\Models\User::class);
+            $table->foreignIdFor(\App\Models\Genre::class);
         });
     }
 
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('histoire');
+        Schema::dropIfExists('histoires');
     }
 };

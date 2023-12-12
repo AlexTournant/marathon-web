@@ -8,21 +8,25 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
     use HasApiTokens, HasFactory, Notifiable;
 
 
-    public function histoires() {
-        return $this->hasMany(Histoires::class);
+    public function mesHistoires() {
+        return $this->hasMany(Histoire::class);
     }
 
     public function avis() {
-        return $this->belongsToMany(Histoire::class, "avis", "user_id", "histoire_id")->withPivot("reponse");
+        return $this->hasMany(Avis::class);
     }
 
     public function terminees() {
-        return $this->belongsToMany(Histoire::class, "terminee", "user_id", "histoire_id")->withPivot("nombre");
+        return $this->belongsToMany(Histoire::class, "terminee", "user_id",
+            "histoire_id")->withPivot("nombre");
+    }
+
+    public function lectures() {
+        return $this->belongsToMany(Histoire::class, 'lectures')->using(Lecture::class);
     }
 
 

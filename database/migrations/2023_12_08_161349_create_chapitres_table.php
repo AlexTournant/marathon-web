@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Histoire;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,10 +19,8 @@ return new class extends Migration
             $table->text('texte');
             $table->string('media')->nullable();
             $table->string('question')->nullable();
-            $table->unsignedBigInteger('histoire_id');
+            $table->foreignIdFor(Histoire::class);
             $table->boolean('premier');
-            $table->timestamps();
-            $table->foreign('histoire_id')->references('id')->on('histoires');
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('chapitre');
+        Schema::dropIfExists('chapitres');
     }
 };

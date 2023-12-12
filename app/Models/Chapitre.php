@@ -13,11 +13,19 @@ class Chapitre extends Model
         return $this->belongsTo(Histoire::class);
     }
 
-    public function suites() {
-        return $this->belongsToMany(Chapitre::class, "suite", "chapitre_source_id", "chapitre_destination_id")->withPivot('reponse');;
+    public function suivants() {
+        return $this->belongsToMany(Chapitre::class, "suites",
+            "chapitre_source_id", "chapitre_destination_id")
+            ->wherePivot("chapitre_source_id", $this->id)
+            ->withPivot('reponse');
     }
 
-    public function pere() {
-        return Chapitre::whereRaw("id in (SELECT chapitre_source_id from suite WHERE chapitre_destination_id=$this->id)")->first();
+    public function precedents() {
+        return $this->belongsToMany(Chapitre::class, "suites",
+            "chapitre_source_id", "chapitre_destination_id")
+            ->wherePivot("chapitre_destination_id", $this->id)
+            ->withPivot('reponse');
+
     }
+
 }
