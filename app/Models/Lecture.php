@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 class Lecture extends Pivot
 {
     use HasFactory;
+    public $timestamps = false;
 
     protected $casts = [
         'sequence' => 'array'

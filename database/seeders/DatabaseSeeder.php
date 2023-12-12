@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -45,6 +46,7 @@ class DatabaseSeeder extends Seeder
             'photo'  => "/images/bit-1.webp",
             'user_id' => 1,
             'active'=>1,
+            'genre_id'=>1
         ]);
 
         // A
@@ -116,37 +118,37 @@ class DatabaseSeeder extends Seeder
             'premier' => 0
         ]);
 
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 1 ,
             'chapitre_destination_id' => 2,
             'reponse' =>'0'
         ]);
 
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 1 ,
             'chapitre_destination_id' => 3,
             'reponse' =>'1'
         ]);
 
 
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 2,
             'chapitre_destination_id' => 4,
             'reponse' =>'0'
         ]);
 
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 2 ,
             'chapitre_destination_id' => 5,
             'reponse' =>'1'
         ]);
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 3 ,
             'chapitre_destination_id' => 6,
             'reponse' =>'0'
         ]);
 
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 3 ,
             'chapitre_destination_id' => 7,
             'reponse' =>'1'
@@ -267,42 +269,42 @@ organique et robotique. En route...",
         //-------------
 
 
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 8 ,
             'chapitre_destination_id' => 9,
             'reponse' =>'Sonner'
         ]);
 
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 8 ,
             'chapitre_destination_id' => 10,
             'reponse' =>'Téléphoner'
         ]);
 
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 8 ,
             'chapitre_destination_id' => 11,
             'reponse' =>'Demander conseil au 3 Fred'
         ]);
 
 
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 10 ,
             'chapitre_destination_id' => 11,
             'reponse' =>'consulter les oracles aux yeux d’émeraude'
         ]);
 
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 10 ,
             'chapitre_destination_id' => 12,
             'reponse' =>'remonter dans son spaceshifter dans l’hypothétique espoir d’une rencontre miraculeuse'
         ]);
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 11 ,
             'chapitre_destination_id' => 12,
             'reponse' =>'Rester méfiant et remonter dans son spaceshifter'
         ]);
-        DB::table('suite')->insert([
+        DB::table('suites')->insert([
             'chapitre_source_id' => 11 ,
             'chapitre_destination_id' => 13,
             'reponse' =>'Leur faire confiance'
@@ -317,6 +319,8 @@ organique et robotique. En route...",
                 'photo'  => "/images/bit-1.webp",
                 'user_id' => rand(1, $nb_users),
                 'active'=>1,
+                'genre_id'=>rand(1,5)
+
             ]);
 
             // A
@@ -335,10 +339,11 @@ organique et robotique. En route...",
                     DB::table("avis")->insert([
                         "histoire_id" => $j,
                         "user_id" => $i,
+                        "contenu" => Str::random(40)
                     ]);
 
                 if (rand(0, 10) > 7)
-                    DB::table("terminee")->insert([
+                    DB::table("terminees")->insert([
                         "histoire_id" => $j,
                         "user_id" => $i,
                         "nombre" => rand(1, 5)
