@@ -339,7 +339,7 @@ organique et robotique. En route...",
                     DB::table("avis")->insert([
                         "histoire_id" => $j,
                         "user_id" => $i,
-                        "contenu" => Str::random(40)
+                        "contenu" => array_map(function($x) {return Str::random(rand(3,10));}, range(0, 9))
                     ]);
 
                 if (rand(0, 10) > 7)
@@ -350,7 +350,83 @@ organique et robotique. En route...",
                     ]);
             }
         }
+
+        // Une histoire en cours de création pas fini et il manque les liens
+        DB::table('histoires')->insert([
+            'titre' => 'z1 ou la vie d\'un demi-octet',
+            'pitch' => "z1 n'a pas une vie très compliquée. Quelque soit la question, la réponse se limite à 0 ou 1. 
+             En même temps, cela lui permet au mois de représenter des nombres en mode binaire. C'est déjà cela !",
+            'photo'  => "/images/bit-1.webp",
+            'user_id' => 1,
+            'active'=>0,
+            'genre_id'=>1
+        ]);
+
+        // A
+        DB::table('chapitres')->insert([
+            'titrecourt' => 'et 1',
+            'texte' => "Aujourd'hui z1 ne sait pas trop quel nombre il va représenter. Tout dépend déjà de la première question.",
+            'question'  => "Est-ce-qu'il fait beau aujourd'hui ?",
+            'histoire_id'  => 1,
+            'premier' => 1
+        ]);
+
+        // B
+        DB::table('chapitres')->insert([
+            'titrecourt' => 'et 2',
+            'texte' => "Dommage, le ciel est gris. Mais ce n'est pas grave !. Aujourd'hui z1 représentera un petit nombre... Et cette deuxième
+ question, où va-t-elle nous amener ?",
+            'media' => "https://img.20mn.fr/XDQLMICIT4KqIOy3ubcYIg/310x190_homme-marche-sous-pluie-a-caen-9-juin-2014.jpg",
+            'question'  => "Prêt pour aller voir Ready Player One ?",
+            'histoire_id'  => 1,
+            'premier' => 0
+        ]);
+
+        // C
+        DB::table('chapitres')->insert([
+            'titrecourt' => 'et 2',
+            'texte' => "Super, il fait beau !!!! A partir de la, le plus grand bit de z1 est vrai. Quelle fierté. Mais quel suspense, Que va t
+ il se passer maintenant ? ",
+            'histoire_id'  => 1,
+            "question" => "Un tour à la plage ou une marche ?",
+            "media" => "https://www.lsa-conso.fr/mediatheque/2/4/0/000144042_5.jpg",
+            'premier' => 0
+        ]);
+
+        // D
+        DB::table('chapitres')->insert([
+            'titrecourt' => ' et 3 zéro !!',
+            'texte' => "Elle est pourtant bien cette histoire. z1 est vraiment ronchon aujourd'hui. Que des zeros, 
+            Il représente donc le néant, le vide, rien, le zéro quoi.. Demain sera un autre jour, espérons que cela finisse mieux",
+            'media' => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBF26Ci41Ys3I9jbIbYyWF4NAKl6VADyioelHpvGm4b9wJmgza",
+            'histoire_id'  => 1,
+            'premier' => 0
+        ]);
+
+        // E
+        DB::table('chapitres')->insert([
+            'titrecourt' => ' et 3 zéro !!',
+            'texte' => "Super, réprésentant le 1, c'est pas mal d'aller voir Ready Player One !!",
+            'media' => "https://img.bfmtv.com/c/1256/708/00f29/b41bac1ae3222f9b727c6198f2e.jpeg",
+            'histoire_id'  => 1,
+            'premier' => 0
+        ]);
+
+        // F
+        DB::table('chapitres')->insert([
+            'titrecourt' => ' et 3 zéro !!',
+            'texte' => "La plage, le soleil, la mer !!! Représenter un 2, ca a du bon quelque fois !",
+            "media" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDHh_Cu9fL0f0d-7EejUzb1XzNPyfgu7RZLlUweSswf8anOevY6Q",
+            'histoire_id'  => 1,
+            'premier' => 0
+        ]);
+
+
+
+
     }
+
+
 
 
 }
