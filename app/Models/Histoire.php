@@ -36,6 +36,6 @@ class Histoire extends Model
     }
 
     public function terminees() {
-        return $this->belongsToMany(User::class, "terminee", "histoire_id", "user_id")->withPivot("nombre");
+        return $this->belongsToMany(User::class, "terminees", "histoire_id", "user_id")->withPivot("nombre");
     }
 }
