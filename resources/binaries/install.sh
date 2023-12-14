@@ -6,8 +6,9 @@ if [ ! -d ./vendor ] ; then
   composer install
 fi
 if [ ! -d ./node_modules ] ; then
-  npm install && npm run build
+  npm install 
 fi
+npm run build
 sudo fixRights $LOGNAME
 
 echo "#end install"
