@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Shadow';
     font-style: normal;
-    src: url("/resources/fonts/Shadows_Into_Light_Two/ShadowsIntoLightTwo-Regular.ttf") format('truetype');
+    src: url("../fonts/Shadows_Into_Light_Two/ShadowsIntoLightTwo-Regular.ttf") format('truetype');
 }
 
 body {
