@@ -161,7 +161,7 @@ class DatabaseSeeder extends Seeder
             'pitch' => "THX1138 est un robot mal dans sa peau et qui cherche un sens à sa vie.",
             'photo'  => "https://m.media-amazon.com/images/M/MV5BYzRiY2I3M2EtODJkMy00NTEyLTgxNmYtYzYwYjk1ZDE1MDE1XkEyXkFqcGdeQXVyNTAyODkwOQ@@.
 _V1_UY1200_CR111,0,630,1200_AL_.jpg",
-            'user_id' => 2,
+            'user_id' => 1,
             'genre_id' => 1,
             'active' => 1
         ]);
@@ -339,7 +339,7 @@ organique et robotique. En route...",
                     DB::table("avis")->insert([
                         "histoire_id" => $j,
                         "user_id" => $i,
-                        "contenu" => array_map(function($x) {return Str::random(rand(3,10));}, range(0, 9))
+                        "contenu" => implode(" ", array_map(function($x) {return Str::random(rand(3,10));}, range(0, 9)))
                     ]);
 
                 if (rand(0, 10) > 7)
@@ -351,7 +351,6 @@ organique et robotique. En route...",
             }
         }
 
-        // Une histoire en cours de création pas fini et il manque les liens
 
         DB::table('histoires')->insert([
             "id" => 100,
@@ -463,11 +462,9 @@ organique et robotique. En route...",
             'premier' => 0,
         ]);
 
-
+        DB::insert("INSERT into lectures values(1,1, ?)", [json_encode([1, 2])]);
 
     }
-
-
 
 
 }
