@@ -21,6 +21,6 @@ deploiement:
     - export NAME
     - ./resources/binaries/build.sh
   tags:
-    - marathon
+    - marathon-23
   only:
     - main
