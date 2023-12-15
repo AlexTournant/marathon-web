@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Shadow';
+    font-style: normal;
+    src: url("/resources/fonts/Shadows_Into_Light_Two/ShadowsIntoLightTwo-Regular.ttf") format('truetype');
+}
+
+body {
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    height: 100px;
+    right: 10px;
+    top: 10px
+}
+
+.img-land {
+    display: block;
+    width: 60vw;
+    margin: 10px auto;
+}
+
+.shadow {
+    font-family: Shadow, serif;
+}
+
+.redact {
+    font-size: 48px;
+    font-family: 'Redacted Script', serif;
+}
