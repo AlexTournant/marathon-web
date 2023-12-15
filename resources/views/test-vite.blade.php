@@ -7,7 +7,7 @@
     '../fonts/**',
 ]);</code></pre>
     <p>dans le fichier <code>resources/js/app.js</code>.</p>
-    <pre><code>&lt;img class="img-land" src="{{Vite::asset('resources/images/arbre.jpg')}}" alt="Arbre"&gt;</code></pre>
+    <pre><code>&lt;img class="img-land" src="&lcub;&lcub;Vite::asset('resources/images/arbre.jpg')&rcub;&rcub;" alt="Arbre"&gt;</code></pre>
 
     <img class="img-land" src="{{Vite::asset('resources/images/arbre.jpg')}}" alt="Arbre">
     <h2>Ressource uploadée</h2>
