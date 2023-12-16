@@ -9,7 +9,7 @@
 </head>
 <body>
 <main>
-    <div style="font-size: larger;">Error 404 - SVP, Stylisez cela !</div>
+    <div style="font-size: larger;">Error 404 - SVP, Stylisez moi !!</div>
 </main>
 
 </body>
