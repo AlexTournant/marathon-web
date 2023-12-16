@@ -354,11 +354,11 @@ organique et robotique. En route...",
 
         DB::table('histoires')->insert([
             "id" => 100,
-            'titre' => 'THX1138',
+            'titre' => 'THX1138 -- Le retour',
             'pitch' => "THX1138 est un robot mal dans sa peau et qui cherche un sens à sa vie.",
             'photo'  => "https://m.media-amazon.com/images/M/MV5BYzRiY2I3M2EtODJkMy00NTEyLTgxNmYtYzYwYjk1ZDE1MDE1XkEyXkFqcGdeQXVyNTAyODkwOQ@@.
 _V1_UY1200_CR111,0,630,1200_AL_.jpg",
-            'user_id' => 2,
+            'user_id' => 1,
             'genre_id' => 1,
             'active' => 0
         ]);
