@@ -88,4 +88,9 @@ class HistoireController extends Controller
     {
         //
     }
+
+    public function ajoutAvis()
+    {
+
+    }
 }
