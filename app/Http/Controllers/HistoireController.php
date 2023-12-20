@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Genre;
 use App\Models\Histoire;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 
@@ -42,16 +43,56 @@ class HistoireController extends Controller
      */
     public function create()
     {
-        //
+        $histoires = Histoire::all();
+        $genres = Genre::all();
+        $users = User::all();
+
+        return view('histoires.create', ['histoires' =>$histoires, 'genres' => $genres, 'users' => $users]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    function store(Request $request)
     {
-        //
+        // validation des données de la requête
+        $this->validate(
+            $request,
+            [
+                'titre' => 'required|string|max:255',
+                'pitch' => 'required|string',
+                'photo' => 'required|string',
+                'active' => '|boolean',
+                'user_id' => 'exists:users,id',
+                'genre_id' => 'exists:genres,id',
+            ],
+            [
+                'required' => 'Le champ :attribute est obligatoire'
+            ]
+        );
+
+        // code exécuté uniquement si les données sont validées
+        // sinon un message d'erreur est renvoyé vers l'utilisateur
+
+        // préparation de l'enregistrement à stocker dans la base de données
+        $histoire = new Histoire;
+
+        $histoire->titre = $request->titre;
+        $histoire->pitch = $request->pitch;
+        $histoire->photo = $request->photo;
+        $histoire->active = $request->active;
+        $histoire->user_id = $request->user_id;
+        $histoire->genre_id = $request->genre_id;
+
+        // insertion de l'enregistrement dans la base de données
+
+        $histoire->save();
+
+        // redirection vers la page qui affiche la liste des tâches
+        return redirect()->route('histoires.index')->with('type', 'primary')->with('msg', 'Histoire ajoutée avec succès');
     }
+
+
 
     /**
      * Display the specified resource.
