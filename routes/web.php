@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HistoireController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('accueil');
 })->name("index");
 
 Route::get('/contact', function () {
@@ -25,3 +26,4 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
+Route::get('/histoire/{id}', [HistoireController::class, 'show'])->name('histoire.show');
