@@ -1,7 +1,6 @@
 <x-layout>
-
     <div class="container">
-        <h1>Bienvenue sur notre site</h1>
+        <h1>{{$titre}}</h1>
         <div class="row">
             @foreach($histoires as $histoire)
                 <div class="col-md-4 mb-4">
@@ -21,6 +20,4 @@
             @endforeach
         </div>
     </div>
-
 </x-layout>
-
