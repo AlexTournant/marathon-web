@@ -31,3 +31,7 @@ Route::get('/index', [HistoireController::class, 'index'])->name('histoires.inde
 
 Route::get('/genre/{id}',[HistoireController::class, 'genre'])->name('genre');
 
+Route::resource('users',\App\Http\Controllers\UserController::class);
+
+Route::get('/chapitre/{id}',[\App\Http\Controllers\ChapitreController::class,'show']);
+
