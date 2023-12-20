@@ -36,6 +36,7 @@ class HistoireController extends Controller
             ['titre' => "Genre ".$genre->label,'histoires' =>$genre->histoires ,  '$genres' => $genres]);
 
     }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -55,9 +56,13 @@ class HistoireController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+
+    public function show(Request $request, string $id)
     {
-        //
+        $histoire = Histoire::find($id);
+        $titre = $request->get('action', 'show') == 'show' ? "Détails de la scène" : "Suppression d'une scène";
+        return view('histoire.show', ['titre' => $titre, 'histoire' => $histoire,
+            'action' => $request->get('action', 'show')]);
     }
 
     /**
