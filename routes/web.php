@@ -27,3 +27,5 @@ Route::get('/test-vite', function () {
 
 Route::resource('users',\App\Http\Controllers\UserController::class);
 
+Route::get('/chapitre/{id}',[\App\Http\Controllers\ChapitreController::class,'show']);
+
