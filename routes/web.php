@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',  [HistoireController::class, 'welcome'])->name('welcome');
+Route::get('/',  [HistoireController::class, 'accueil'])->name('accueil');
 
 
 Route::get('/contact', function () {
