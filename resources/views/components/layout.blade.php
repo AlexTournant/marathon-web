@@ -12,7 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-FXt5TUsjLeq/A6H9OMf+jrc+cJL4lAhL5d8tfw2EOZg=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-GLhlTQ8iK9tPte6sRUZfAqq6iENgH-zWT+O8OjmgF5PGNO1q1Bd2f6PUEisi1I6D" crossorigin="anonymous"></script>
 
-    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js'])
+    @vite(['resources/css/app.css'])
     <title>{{$titre ?? "Application Laravel"}}</title>
 </head>
 <body>
