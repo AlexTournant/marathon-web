@@ -1,5 +1,4 @@
-@extends("templates.app")
-
+<x-layout>
 @section('content')
     <div style="display: flex;align-items: center; justify-content: center">
         <div>
@@ -8,3 +7,4 @@
     </div>
 
 @endsection
+</x-layout>

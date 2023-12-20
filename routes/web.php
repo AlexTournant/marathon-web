@@ -25,3 +25,5 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
+Route::resource('users',\App\Http\Controllers\UserController::class);
+

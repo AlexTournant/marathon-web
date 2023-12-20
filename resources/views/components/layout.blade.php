@@ -25,6 +25,7 @@
         <form id="logout" action="{{route("logout")}}" method="post">
             @csrf
         </form>
+        <a href="/users/{{Auth::id()}}">profil</a>
     @else
         <a href="{{route("login")}}">Login</a>
         <a href="{{route("register")}}">Register</a>
