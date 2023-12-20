@@ -25,7 +25,7 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
-Route::get('/histoire/{id}', [HistoireController::class, 'show'])->name('histoire.show');
+Route::get('/histoires/{id}', [HistoireController::class, 'show'])->name('histoire.show');
 
 Route::get('/index', [HistoireController::class, 'index'])->name('histoires.index');
 
@@ -35,3 +35,4 @@ Route::resource('users',\App\Http\Controllers\UserController::class);
 
 Route::get('/chapitre/{id}',[\App\Http\Controllers\ChapitreController::class,'show']);
 
+Route::resource('histoires', HistoireController::class);

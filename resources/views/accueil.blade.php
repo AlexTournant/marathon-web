@@ -12,7 +12,9 @@
                     <div class="card">
                         <img src="{{ asset($histoire->photo) }}" class="card-img-top" alt="{{ $histoire->titre }}">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $histoire->titre }}</h5>
+                            <h5 class="card-title">
+                                <a href="{{ route('histoires.show', $histoire->id) }}" class="text-decoration-none">{{ $histoire->titre }}</a>
+                            </h5>
                             <p class="card-text">{{ $histoire->pitch }}</p>
                             <p class="card-text"><small class="text-muted">{{ $histoire->active ? 'Actif' : 'Inactif' }}</small></p>
                             <p class="card-text">Utilisateur: {{ $histoire->user->name }}</p>
