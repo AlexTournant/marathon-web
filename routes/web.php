@@ -25,3 +25,4 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
+Route::resource('chapitres',\App\Http\Controllers\ChapitreController::class);
