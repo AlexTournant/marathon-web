@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&family=Sulphur+Point&display=swap" rel="stylesheet">
     </script>
 
-    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/style.css'])
+    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/style.css, 'resources/css/app.css''])
+
     <title>{{$titre ?? "Application Laravel"}}</title>
 </head>
 <body>

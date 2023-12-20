@@ -61,7 +61,7 @@ class HistoireController extends Controller
     {
         $histoire = Histoire::find($id);
         $titre = $request->get('action', 'show') == 'show' ? "Détails de la scène" : "Suppression d'une scène";
-        return view('histoire.show', ['titre' => $titre, 'histoire' => $histoire,
+        return view('histoires.show', ['titre' => $titre, 'histoire' => $histoire,
             'action' => $request->get('action', 'show')]);
     }
 
