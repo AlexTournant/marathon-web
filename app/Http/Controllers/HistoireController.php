@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Cookie;
 
 class HistoireController extends Controller
 {
-    public function welcome()
+    public function accueil()
     {
         $histoiresHome = Histoire::take(3)->get();
 
-        return view('welcome', ['histoires'=>$histoiresHome]);
+        return view('accueil', ['histoires'=>$histoiresHome]);
     }
 
     /**
