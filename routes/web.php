@@ -25,8 +25,6 @@ Route::get('/test-vite', function () {
     return view('test-vite');
 })->name("test-vite");
 
-Route::get('/histoires/{id}', [HistoireController::class, 'show'])->name('histoire.show');
-
 Route::get('/index', [HistoireController::class, 'index'])->name('histoires.index');
 
 Route::get('/genre/{id}',[HistoireController::class, 'genre'])->name('genre');
