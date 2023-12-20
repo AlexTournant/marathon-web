@@ -40,3 +40,10 @@ footer {
     border-bottom: 2px solid #E28413;
 }
 
+.navbar-toggler{
+    position: relative;
+    top: 100%;
+    left: 65%;
+
+}
+

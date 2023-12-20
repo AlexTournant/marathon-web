@@ -1,9 +1,11 @@
 <nav style="background-color: #000022; padding: 20px;" class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid d-flex">
+        <div>
         <a class="navbar-brand" href="/" style="font-size: 24px"><img src="{{ asset("/images/logo.png")}}" style="width: 20%"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        </div>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto" style="font-size: 18px;">
                 <li class="nav-item">
@@ -41,7 +43,7 @@
                                 @if(isset(Auth::user()->avatar))
                                 <img src="{{asset("/storage/avatars/".Auth::user()->avatar)}}" class="img-fluid " alt="Votre Image">
                                 @else
-                                    <img src="{{asset("/resources/images/default_avatar.png")}}" class="img-fluid " alt="Avatar par défaut">
+                                    <img src="{{asset("/images/default_avatar.jpg")}}" class="img-fluid " alt="Avatar par défaut">
                                 @endif
                             </a>
                         </div>
