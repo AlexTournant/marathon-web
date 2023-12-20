@@ -88,4 +88,14 @@ class HistoireController extends Controller
     {
         //
     }
+
+    public function getPremier(string $id){
+        $histoire= Histoire::find($id);
+        foreach ($histoire->chapitres as $h){
+            if ($h->premier===1){
+                return $h->id;
+            }
+        }
+        return null;
+    }
 }
