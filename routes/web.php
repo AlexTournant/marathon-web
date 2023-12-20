@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('accueil');
-})->name("index");
+Route::get('/',  [HistoireController::class, 'welcome'])->name('welcome');
+
 
 Route::get('/contact', function () {
     return view('contact');
@@ -27,3 +26,8 @@ Route::get('/test-vite', function () {
 })->name("test-vite");
 
 Route::get('/histoire/{id}', [HistoireController::class, 'show'])->name('histoire.show');
+
+Route::get('/index', [HistoireController::class, 'index'])->name('histoires.index');
+
+Route::get('/genre/{id}',[HistoireController::class, 'genre'])->name('genre');
+
