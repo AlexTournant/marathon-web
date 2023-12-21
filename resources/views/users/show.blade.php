@@ -17,5 +17,8 @@
         @endauth
         <p class="text-center mb-1"><strong>Adresse de courriel</strong></p>
         <p class="text-center mb-4"><a href="mailto:{{$user['email']}}">{{ $user['email'] }}</a></p>
+        @if(count($user->mesHistoires))
+            <a href="{{route('histoires.index',['histoires'=>\App\Models\User::find(\Illuminate\Support\Facades\Auth::id())->mesHistoires()->get()])}}">Histoires crees</a>
+        @endif
     </div>
 </x-layout>
