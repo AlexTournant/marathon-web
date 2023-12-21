@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&family=Sulphur+Point&display=swap" rel="stylesheet">
     </script>
 
-    @vite(['resources/css/style.css'])
+    @vite(['resources/css/style.css', 'resources/css/app.css' ])
 
 
 

@@ -9,7 +9,6 @@ body {
 
 main {
     min-height: 80vh;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -192,8 +191,6 @@ justify-content: center;
     font-family: 'Sulphur';
     background-color: #E28413;
     color: #f5f5f5;
-}
-
 }
 
 .card-text {
