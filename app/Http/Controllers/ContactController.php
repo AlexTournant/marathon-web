@@ -2,14 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chapitre;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
-class ChapitreController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+    public function afficherFormulaire()
+    {
+        return view('contact.contact');
+    }
+
+    public function traiterFormulaire(Request $request)
+    {
+        $contact = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ];
+
+        return view('contact.afficherFormulaire', compact('contact'));
+    }
+
     public function index()
     {
         //
@@ -28,18 +47,17 @@ class ChapitreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
-//        Scene::with('notes')->get()[$i]['pivot']
-        $chapitre=Chapitre::find($id);
-        return view('chapitres.show',['chapitre'=>$chapitre]);
+        //
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -52,10 +70,11 @@ class ChapitreController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
         //
     }
+
 
     /**
      * Remove the specified resource from storage.

@@ -1,27 +1,32 @@
 <x-layout>
-    <h1>{{$titre}}</h1>
-    <div class="container">
-        <div> Chapitre #{{$chapitre->id}}</div>
-        <div>{{$chapitre->titre}}</div>
-        <div>{{$chapitre->texte}}</div>
-        <div> <img src="{{asset($chapitre->media)}}"> </div>
-        <div>{{$chapitre->question}}</div>
-        <div class="tache-des">
-            {{--
-            @if($action == 'delete')
-                <form action="{{route('chapitres.destroy',$chapitre->id)}}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <div class="text-center">
-                        <button type="submit" name="delete" value="valide">Valide</button>
-                        <button type="submit" name="delete" value="annule">Annule</button>
-                    </div>
-                </form>
-            @else--}}
-                <div>
-                    <a href="{{route('histoires.index')}}">Retour à l'accueil</a>
-                </div>
-            {{--@endif--}}
+        <div>
+                {{$chapitre["titrecourt"]}}
         </div>
-    </div>
+        @if(str_starts_with("chapitres/",$chapitre->media))
+{{--                <img src="{{ \Illuminate\Support\Facades\Storage::url($chapitre->media)}}" >--}}
+                <img src="{{$chapitre->media}}" >
+        @else
+                <img src="{{$chapitre->media}}" >
+        @endif
+        <div>
+                {{$chapitre["texte"]}}
+        </div>
+        <div>
+                <button><a href="/index">Retourner a l'accueil</a></button>
+
+                @if(count($chapitre->suivants)>0)
+                        @foreach($chapitre->suivants as $c)
+                                <a href="{{"/chapitre/".$c->id}}">{{$c->pivot->reponse}}</a>
+                        @endforeach
+                @endif
+
+        </div>
+{{--        "id" => 1--}}
+{{--        "titre" => null--}}
+{{--        "titrecourt" => "et 1"--}}
+{{--        "texte" => "Aujourd'hui z1 ne sait pas trop quel nombre il va représenter. Tout dépend déjà de la première question."--}}
+{{--        "media" => null--}}
+{{--        "question" => "Est-ce-qu'il fait beau aujourd'hui ?"--}}
+{{--        "histoire_id" => 1--}}
+{{--        "premier" => 1--}}
 </x-layout>

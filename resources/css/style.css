@@ -1,0 +1,89 @@
+* {
+    margin: 0 auto;
+    font-family: 'Sulphur Point', sans-serif;
+}
+
+#titre1 {
+    text-align: center;
+}
+
+.presentation {
+    top: 55%;
+    left: 22%;
+    position: absolute;
+    color: white;
+    width: 15em;
+    font-size: 4em;
+}
+   
+.carous{
+    width: 50em;
+    height: 50em;
+}
+
+
+.plus {
+    text-align: center;
+    padding-left: 5em;
+}
+
+.hist {
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.vignette {
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.hist img {
+    width: 50%;
+    aspect-ratio: 1;
+}
+
+.fond {
+    width: 100%;
+    height: 40em;
+}
+
+.container {
+    background-color: lightgrey;
+    border-radius: 15px;
+    max-width: 400px;
+    padding: 20px;
+    margin-top: 5em;
+}
+
+
+.content {
+    border-left: 2px solid #E28413;
+    border-right: 2px solid #E28413;
+    display:flex;
+    justify-content: space-between;
+    text-align: left;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.align {
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.content input{
+    margin-bottom: 10px;
+}
+
+.btn {
+    color:white;
+    background-color: #E28413;
+    margin-left: 6em;
+    margin-right: 6em;
+}
