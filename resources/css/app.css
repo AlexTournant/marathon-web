@@ -70,6 +70,7 @@ font-family: 'Redacted';
 font-size: 45px;
 padding : 30px 
 }
+
 .row{
     background-color: rgba(0,0,0,.03);
     border-radius: 1em;
@@ -98,4 +99,12 @@ form input{
 }
 b{
     color: #E28413;
+}
+td{
+    color: #E28413;
+}
+thead{
+    background-color: #000022;
+    color: #f5f5f5;
+
 }
