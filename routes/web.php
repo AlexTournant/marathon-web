@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvisController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\HistoireController;
@@ -50,4 +51,5 @@ Route::post("/lienChapitre/{id}", [HistoireController::class, 'link']);
 
 
 Route::get('/apropos', [EquipeController::class, 'index'])->name('equipes.index');
+Route::resource('avis', AvisController::class)->only(['store']);
 
