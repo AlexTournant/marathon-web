@@ -8,7 +8,12 @@
     <div class="container mt-2">
         <h1 class="text-center mb-2">Profil : {{ $user['name']  }}</h1>
         <h2 class="text-center mb-3">Informations détaillées</h2>
-        <p class="text-center mb-3"><a href="/users/{{$user['id']}}/edit">Modifier le profil</a></p>
+
+        @auth
+            @if(auth()->user()->id === $histoire->user->id)
+                <p class="text-center mb-3"><a href="/users/{{$user['id']}}/edit">Modifier le profil</a></p>
+            @endif
+        @endauth
         <p class="text-center mb-1"><strong>Adresse de courriel</strong></p>
         <p class="text-center mb-4"><a href="mailto:{{$user['email']}}">{{ $user['email'] }}</a></p>
     </div>
