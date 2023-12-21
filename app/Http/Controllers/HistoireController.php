@@ -204,4 +204,13 @@ class HistoireController extends Controller
 
     }
 
+    public function troisPremieresHistoires()
+    {
+        $troisHistoires = Histoire::take(3)->get();
+        $genres = Genre::all();
+
+        return view('histoires.accueil', ['histoires' => $troisHistoires, 'genres' => $genres]);
+    }
+
+
 }
