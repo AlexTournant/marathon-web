@@ -1,5 +1,3 @@
-<!-- resources/views/nom-de-votre-page.blade.php -->
-
 <x-layout>
     <div class="row">
         {{-- COLONNE GAUCHE --}}
@@ -14,17 +12,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Titre Court 1</td>
-                        <td>Question 1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Titre Court 2</td>
-                        <td>Question 2</td>
-                    </tr>
-                    <!-- Ajoutez d'autres lignes selon vos besoins -->
+                    @if(count(\App\Models\Histoire::find($id)->chapitres()->get())>0)
+                        @foreach(\App\Models\Histoire::find($id)->chapitres()->get() as $c)
+                            <tr>
+                                <th>ID {{$c->id}}</th>
+                                <th>Titre Court {{$c->titrecourt}}</th>
+                                <th>Question {{$c->question}}</th>
+                            </tr>
+                        @endforeach
+                    @endif
                     </tbody>
                 </table>
             </div>
@@ -62,6 +58,11 @@
                     </label>
                 </div>
 
+                <div class="form-group">
+                    <label>Texte</label>
+                    <input type="text" name="texte" class="form-control" placeholder="Texte">
+                </div>
+
 
                 <!-- Login Button -->
                 <div class="form-group">
@@ -80,19 +81,23 @@
 
                 <div class="form-group">
                     <label>Source :</label>
-                    <select name="options" class="form-control">
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
+                    <select name="source" class="form-control">
+                        @if(count(\App\Models\Histoire::find($id)->chapitres()->get())>0)
+                            @foreach(\App\Models\Histoire::find($id)->chapitres()->get() as $c)
+                                <option  value="{{$c->id}}">{{$c->id}}  {{$c->titrecourt}}</option>
+                            @endforeach
+                        @endif
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Destination :</label>
-                    <select name="options" class="form-control">
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
+                    <select name="destination" class="form-control">
+                        @if(count(\App\Models\Histoire::find($id)->chapitres()->get())>0)
+                            @foreach(\App\Models\Histoire::find($id)->chapitres()->get() as $c)
+                                <option  value="{{$c->id}}">{{$c->id}} {{$c->titrecourt}}</option>
+                            @endforeach
+                        @endif
                     </select>
                 </div>
 
@@ -110,22 +115,22 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th>Source</th>
-                        <th>Reponse</th>
-                        <th>Destination</th>
+                        <th>Source </th>
+                        <th>Reponse </th>
+                        <th>Destination </th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Source 1</td>
-                        <td>Reponse 1</td>
-                        <td>Destination 1</td>
-                    </tr>
-                    <tr>
-                        <td>Source 2</td>
-                        <td>Reponse 2</td>
-                        <td>Destination 2</td>
-                    </tr>
+                        @foreach(\App\Models\Histoire::find($id)->chapitres()->get() as $c)
+                            @foreach($c->suivants as $next)
+                                <tr>
+                            <td>Source {{$c->id}}</td>
+                            <td>Reponse {{$next->pivot->reponse}}</td>
+                            <td>Destination {{$next->id}}</td>
+                                </tr>
+                            @endforeach
+                        @endforeach
+
                     <!-- Ajoutez d'autres lignes selon vos besoins -->
                     </tbody>
                 </table>
