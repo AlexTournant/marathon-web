@@ -14,7 +14,7 @@
                     <div class="col-md-6">
                     </div>
                     <div class="text-center">
-                        <a href="/chapitre/{{(new \App\Http\Controllers\HistoireController())->getPremier($histoire->id)}}
+                        <a href={{"/chapitre/".(new \App\Http\Controllers\HistoireController())->getPremier($histoire->id)}}>Commencer l'histoire</a>
                     </div>
                     <div class="text-center">
                         <a href="/">Retour</a>
