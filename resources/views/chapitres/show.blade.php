@@ -12,8 +12,14 @@
                 {{$chapitre["texte"]}}
         </div>
         <div>
-                <button><a href="/index">Retourner a l'accueil</a></button>
+                @if(count($chapitre->suivants) === 0)
+                        @php
+                                $histoire = \App\Models\Histoire::find($chapitre->histoire_id);
+                        @endphp
+                        {{Auth::user()->terminees()->attach($histoire->id, ['nombre' =>1])}}
+                        <button><a href="/index">Retourner a l'accueil</a></button>
 
+                @endif
                 @if(count($chapitre->suivants)>0)
                         @foreach($chapitre->suivants as $c)
                                 <a href="{{"/chapitre/".$c->id}}">{{$c->pivot->reponse}}</a>
