@@ -5,16 +5,18 @@
 
 #titre1 {
     text-align: center;
+    padding-top: 21px;
 }
 
 .presentation {
     top: 17%;
     left: 0%;
     right: 0%;
-    padding: 80px;
+    padding: 20px;
     position: absolute;
     color: white;
     font-size: 4em;
+    display: flex;
 }
    
 .carous{
