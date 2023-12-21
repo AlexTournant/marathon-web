@@ -70,6 +70,7 @@ font-family: 'Redacted';
 font-size: 45px;
 padding : 30px 
 }
+
 .row{
     background-color: rgba(0,0,0,.03);
     border-radius: 1em;
@@ -99,6 +100,7 @@ form input{
 b{
     color: #E28413;
 }
+
 
 .main-container{
     display: block  ;
@@ -163,5 +165,4 @@ justify-content: center;
     background-color: #E28413;
     color: #f5f5f5;
 }
-
 
