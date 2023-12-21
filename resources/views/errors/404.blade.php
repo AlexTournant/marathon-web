@@ -9,7 +9,10 @@
 </head>
 <body>
 <main>
-    <div style="font-size: larger;">Error 404 - SVP, Stylisez moi !!</div>
+    <div class='error'>
+    <h1 class="error4041">ERROR 404</h1>
+    <h3 class="error4042">La page n'est pas disponible...</h2>
+    </div>
 </main>
 
 </body>

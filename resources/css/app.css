@@ -194,3 +194,49 @@ justify-content: center;
     height: 20em;
 }
 
+.error {
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-direction: column;
+}
+
+.error4041 {
+    font-size: 3em;
+    color: #E28413;
+    text-align: center;
+}
+
+.error4042 {
+    text-align: center;
+}
+
+.resize {
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1em;
+}
+
+.personne {
+    width: 30%;
+    height: 13em;
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+}
+
+.res {
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-direction: column;
+}
+
+.centrer {
+    display:flex;
+    text-align: center;
+    justify-content: center;
+}
