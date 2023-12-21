@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\HistoireController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,3 +35,5 @@ Route::resource('users',\App\Http\Controllers\UserController::class);
 Route::get('/chapitre/{id}',[\App\Http\Controllers\ChapitreController::class,'show']);
 
 Route::resource('histoires', HistoireController::class);
+
+Route::get('/equipes/index', [EquipeController::class, 'index'])->name('equipes.index');
