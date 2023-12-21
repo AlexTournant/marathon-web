@@ -5,26 +5,33 @@
 
 #titre1 {
     text-align: center;
+    padding-top: 21px;
 }
 
 .presentation {
-    top: 55%;
-    left: 22%;
+    top: 17%;
+    left: 0%;
+    right: 0%;
+    padding: 20px;
     position: absolute;
     color: white;
-    width: 15em;
-    font-size: 4em;
+    font-size: 2em;
 }
    
 .carous{
     width: 50em;
     height: 50em;
 }
+@media screen and (max-width: 700px){
+    h1{
+       font-size: 30px;
+    }
 
+}
 
 .plus {
     text-align: center;
-    padding-left: 5em;
+  
 }
 
 .hist {
@@ -87,3 +94,4 @@
     margin-left: 6em;
     margin-right: 6em;
 }
+

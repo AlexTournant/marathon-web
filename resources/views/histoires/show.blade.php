@@ -10,6 +10,8 @@
                     <div class="col-md-6">
                         <p><strong>Histoire N° : </strong> {{$histoire->id}}</p>
                         <p><strong>Synopsis : </strong> {{$histoire->pitch}}</p>
+                        <p><strong>Avis : </strong> {{count($histoire->avis()->get())}}</p>
+                        <p><strong>Lecture terminée : </strong> {{count($histoire->terminees()->get())}}</p>
                     </div>
                     <div class="col-md-6">
                     </div>
@@ -17,7 +19,7 @@
                         <a href={{"/chapitre/".(new \App\Http\Controllers\HistoireController())->getPremier($histoire->id)}}>Commencer l'histoire</a>
                     </div>
                     <div class="text-center">
-                        <a href="/">Retour</a>
+                        <a href="/index">Retour</a>
                     </div>
                 </div>
                 <h4>Avis</h4>

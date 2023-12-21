@@ -89,7 +89,7 @@ class HistoireController extends Controller
         // insertion de l'enregistrement dans la base de données
 
         $histoire->save();
-
+        $h=Histoire::find($histoire->id);
         // redirection vers la page qui affiche la liste des tâches
         return redirect()->route('encours', ['id' => $histoire->id])
             ->with('type', 'primary')
@@ -167,13 +167,17 @@ class HistoireController extends Controller
         // sinon un message d'erreur est renvoyé vers l'utilisateur
 
         // préparation de l'enregistrement à stocker dans la base de données
-
         $chapitre=new Chapitre;
         $chapitre->titre=$request->titre;
         $chapitre->titrecourt=$request->titrecourt;
         $chapitre->media=$request->media;
         $chapitre->question=$request->question;
-        $chapitre->premier=$request->check;
+        if ($request->check=="on") {
+            $chapitre->premier = true;
+        }
+        else{
+            $chapitre->premier = false;
+        }
         $chapitre->histoire_id=$id;
         $chapitre->texte=$request->texte;
         $chapitre->save();
@@ -186,29 +190,27 @@ class HistoireController extends Controller
     }
 
     public function link(Request $request, string $id ){
-        $this->validate(
-            $request,
-            [
-                'source' => 'required|string|max:255',
-                'destination' => 'required|string',
-                'reponse' => 'required|string',
-            ],
-            [
-                'required' => 'Le champ :attribute est obligatoire'
-            ]
-        );
 
         // code exécuté uniquement si les données sont validées
         // sinon un message d'erreur est renvoyé vers l'utilisateur
 
         // préparation de l'enregistrement à stocker dans la base de données
-
         $chapitre=Chapitre::find($request->source);
-        $chapitre->suivants->attach($request->destination,["reponse"=>$request->reponse]);
+        $chapitre->suivants()->attach($request->destination,["reponse"=>$request->reponse]);
+
 
         // redirection vers la page qui affiche la liste des tâches
         return redirect()->route('encours', ['id' => $id])->with('type', 'primary')->with('msg', 'Histoire ajoutée avec succès');
 
     }
+
+    public function troisPremieresHistoires()
+    {
+        $troisHistoires = Histoire::take(3)->get();
+        $genres = Genre::all();
+
+        return view('histoires.accueil', ['histoires' => $troisHistoires, 'genres' => $genres]);
+    }
+
 
 }

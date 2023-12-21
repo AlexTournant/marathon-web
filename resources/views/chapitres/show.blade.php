@@ -1,32 +1,43 @@
 <x-layout>
-        <div>
+        
+        <div class="titre">
                 {{$chapitre["titrecourt"]}}
         </div>
+        <div class="imgchap">
         @if(str_starts_with("chapitres/",$chapitre->media))
 {{--                <img src="{{ \Illuminate\Support\Facades\Storage::url($chapitre->media)}}" >--}}
                 <img src="{{$chapitre->media}}" >
         @else
                 <img src="{{$chapitre->media}}" >
         @endif
-        <div>
-                {{$chapitre["texte"]}}
         </div>
+
+        <div class="text">
+            <p>    {{$chapitre["texte"]}}</p>
+        </div>
+                <div class="boutoption">
+                        <div class="option">
+
         <div>
                 @if(count($chapitre->suivants) === 0)
+                        @auth()
                         @php
                                 $histoire = \App\Models\Histoire::find($chapitre->histoire_id);
                         @endphp
                         {{Auth::user()->terminees()->attach($histoire->id, ['nombre' =>1])}}
-                        <button><a href="/index">Retourner a l'accueil</a></button>
+                        @endauth
 
-                @endif
-                @if(count($chapitre->suivants)>0)
-                        @foreach($chapitre->suivants as $c)
-                                <a href="{{"/chapitre/".$c->id}}">{{$c->pivot->reponse}}</a>
-                        @endforeach
-                @endif
+                                @endif
 
-        </div>
+                                @if(count($chapitre->suivants)>0)
+                                        @foreach($chapitre->suivants as $c)
+                                                <a href="{{"/chapitre/".$c->id}}">{{$c->pivot->reponse}}</a>
+                                        @endforeach
+                                @endif
+                                </div>
+                                <button><a href="/index">Retourner a l'accueil</a></button>
+                        </div>
+                </div>
 {{--        "id" => 1--}}
 {{--        "titre" => null--}}
 {{--        "titrecourt" => "et 1"--}}
