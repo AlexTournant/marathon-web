@@ -32,7 +32,7 @@ footer {
 .navbar-nav .nav-link {
     color: #E28413;
     text-decoration: none;
-    position: relative;
+   position: relative;
     width: fit-content;
 }
 
@@ -46,4 +46,11 @@ footer {
     left: 65%;
 
 }
+.nav-item a{
+font-size: 25px;
+}
 
+.main-footer{
+    background-color:#000022 ;
+    color: #f5f5f5;
+}

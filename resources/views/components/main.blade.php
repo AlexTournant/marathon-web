@@ -16,11 +16,11 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&family=Sulphur+Point&display=swap" rel="stylesheet">
     </script>
 
-    @vite(['resources/css/test-vite.css', 'resources/js/test-vite.js', 'resources/css/app.css'])
+    @vite(['resources/css/style.css'])
 
 
 
-    <title>{{$titre ?? "History Maker"}}</title>
+    <title>{{$titre ?? "Application Laravel"}}</title>
 </head>
 <body>
 <x-header></x-header>
