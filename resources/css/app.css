@@ -63,6 +63,19 @@ font-size: 25px;
 }
 .card{
     border: 0;
+    border: 2px solid #E28413;
+    height: 100%;
+}
+
+.card-title a{
+    color: #000022;
+    font-size: 1.7em;
+    text-decoration: none;
+}
+
+.card-text a{
+    color:#000022;
+    text-decoration: none;
 }
 
 .card-header h1 {
@@ -71,9 +84,23 @@ font-size: 45px;
 padding : 30px 
 }
 
+.btn {
+    color:white;
+    background-color: #E28413;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    position: relative;
+    top: -3em;
+    left: 80%;
+}
+
+.container h1 {
+    text-align: center;
+    padding-top: 1em;
+}
+
 .row{
     background-color: rgba(0,0,0,.03);
-    border-radius: 1em;
     padding: 10px;
 }
 .text-center{
@@ -107,4 +134,13 @@ thead{
     background-color: #000022;
     color: #f5f5f5;
 
+}
+
+.card-text {
+    color: #E28413;
+    font-weight: bold;
+}
+
+.card-img-top {
+    height: 20em;
 }
