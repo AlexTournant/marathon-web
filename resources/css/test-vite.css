@@ -4,9 +4,6 @@
     src: url("../fonts/Shadows_Into_Light_Two/ShadowsIntoLightTwo-Regular.ttf") format('truetype');
 }
 
-body {
-    position: relative;
-}
 
 .logo {
     position: absolute;
