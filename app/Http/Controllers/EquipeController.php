@@ -20,6 +20,7 @@ class EquipeController extends Controller
                 [ 'nom'=>"Ballet",'prenom'=>"Dylan", 'image'=>"/public/images/dylan.png", 'fonctions'=>["développeur"] ],
                 [ 'nom'=>"Tournant",'prenom'=>"Alex", 'image'=>"/public/images/alex.png", 'fonctions'=>["développeur"] ],
                 [ 'nom'=>"Demory",'prenom'=>"Mael", 'image'=>"/public/images/mael.png", 'fonctions'=>["validateur","développeur"] ],
+                [ 'nom'=>"Fournier",'prenom'=>"Corentin", 'image'=>"/public/images/corentin.png", 'fonctions'=>["développeur"] ],
                 [ 'nom'=>"Elhajali",'prenom'=>"Lola", 'image'=>"/public/images/prenom.png", 'fonctions'=>["concepteur"] ],
                 [ 'nom'=>"Honore",'prenom'=>"Clara", 'image'=>"/public/images/clara.png", 'fonctions'=>["développeur", "concepteur"] ],
                 [ 'nom'=>"Maison",'prenom'=>"Remy", 'image'=>"/public/images/remy.png", 'fonctions'=>["développeur", "concepteur"] ],
