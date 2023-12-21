@@ -5,82 +5,32 @@
 
 #titre1 {
     text-align: center;
-    margin-top: 30px;
-    font-size: 100px
-}
-
-.plus{
-    font-size: 35px;
-
-
 }
 
 .presentation {
-    top: 30%;
-    left: 22%;
+    top: 17%;
+    left: 0%;
+    right: 0%;
+    padding: 80px;
     position: absolute;
     color: white;
-    width: 70%;
     font-size: 4em;
-    align-items: center;
-    margin-top: 80px;
-}
-
-@media screen and (max-width:1000px) {
-
-
-
-
-    .fond{
-        width: 300px;
-        height: 50px;
-    }
-
-    .hist{
-        flex-direction: column;
-        background-color: grey;
-    }
-
-    .plus{
-        text-align: center;
-        justify-content: center;
-        margin-right: 120px;
-        font-size: 1.5rem;
-    }
-
-    div .vignette{
-        width: 100%;
-    }
-
-    #titre1{
-        font-size: 4rem;
-        margin-top: 30px;
-    }
-
-    .d-block{
-
-        width: 55%;
-        position: relative;
-        right: 110px;
-        margin-top: 3rem;
-        display: flex;
-    }
-
-    .presentation{
-
-    }
-
 }
    
 .carous{
     width: 50em;
     height: 50em;
 }
+@media screen and (max-width: 700px){
+    h1{
+       font-size: 30px;
+    }
 
+}
 
 .plus {
     text-align: center;
-    padding-left: 5em;
+  
 }
 
 .hist {
@@ -144,6 +94,3 @@
     margin-right: 6em;
 }
 
-.row {
-    height: 20em;
-}

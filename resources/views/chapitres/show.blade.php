@@ -15,28 +15,28 @@
         <div class="text">
             <p>    {{$chapitre["texte"]}}</p>
         </div>
-        <div class="boutoption">
-                <div class="option">
+                <div class="boutoption">
+                        <div class="option">
 
-        <div>
-                @if(count($chapitre->suivants) === 0)
-                        @php
-                                $histoire = \App\Models\Histoire::find($chapitre->histoire_id);
-                        @endphp
-                        {{Auth::user()->terminees()->attach($histoire->id, ['nombre' =>1])}}
-                        <button><a href="/index">Retourner a l'accueil</a></button>
+                                <div>
+                                @if(count($chapitre->suivants) === 0)
+                                        @php
+                                                $histoire = \App\Models\Histoire::find($chapitre->histoire_id);
+                                        @endphp
+                                        {{Auth::user()->terminees()->attach($histoire->id, ['nombre' =>1])}}
+                                        <button><a href="/index">Retourner a l'accueil</a></button>
 
-                @endif
+                                @endif
 
-                @if(count($chapitre->suivants)>0)
-                        @foreach($chapitre->suivants as $c)
-                                <a href="{{"/chapitre/".$c->id}}">{{$c->pivot->reponse}}</a>
-                        @endforeach
-                @endif
+                                @if(count($chapitre->suivants)>0)
+                                        @foreach($chapitre->suivants as $c)
+                                                <a href="{{"/chapitre/".$c->id}}">{{$c->pivot->reponse}}</a>
+                                        @endforeach
+                                @endif
+                                </div>
+                                <button><a href="/index">Retourner a l'accueil</a></button>
+                        </div>
                 </div>
-                <button><a href="/index">Retourner a l'accueil</a></button>
-
-        </div>
 {{--        "id" => 1--}}
 {{--        "titre" => null--}}
 {{--        "titrecourt" => "et 1"--}}
