@@ -30,7 +30,7 @@
                 </form>
                 @endauth
                 @foreach($histoire->avis()->orderByDesc('id')->limit(10)->get() as $a)
-                    <div>
+                    <div style="background-color:rgba(0,0,0,.03);padding:10px;border-radius:1.5em;margin:20px">
                         <b>{{$a->user->name}}</b>
                         <p>{{$a->contenu}}</p>
                     </div>
