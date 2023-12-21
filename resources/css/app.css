@@ -144,3 +144,21 @@ thead{
 .card-img-top {
     height: 20em;
 }
+
+.error {
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-direction: column;
+}
+
+.error4041 {
+    font-size: 3em;
+    color: #E28413;
+    text-align: center;
+}
+
+.error4042 {
+    text-align: center;
+}
+
