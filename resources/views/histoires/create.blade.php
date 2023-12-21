@@ -21,23 +21,6 @@
             </div>
 
             <div class="form-group">
-                <label for="active">Actif</label>
-                <select class="form-control" id="active" name="active" required>
-                    <option value="1" {{ old('active') == 1 ? 'selected' : '' }}>Oui</option>
-                    <option value="0" {{ old('active') == 0 ? 'selected' : '' }}>Non</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="user_id">Utilisateur</label>
-                <select class="form-control" id="user_id" name="user_id" required>
-                    @foreach($users as $user)
-                        <option value="{{ $user->id }}" {{ old('user_id') == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class="form-group">
                 <label for="genre_id">Genre</label>
                 <select class="form-control" id="genre_id" name="genre_id" required>
                     @foreach($genres as $genre)

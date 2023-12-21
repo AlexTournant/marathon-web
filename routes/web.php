@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AvisController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\HistoireController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',  [HistoireController::class, 'accueil'])->name('accueil');
 
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name("contact");
+Route::get('/contact', [ContactController::class, 'afficherFormulaire']);
+
+Route::get('/formulaire', [ContactController::class, 'show']);
+Route::post('/contact', [ContactController::class, 'traiterFormulaire']);
+
 
 Route::get('/test-vite', function () {
     return view('test-vite');
@@ -34,3 +39,17 @@ Route::resource('users',\App\Http\Controllers\UserController::class);
 Route::get('/chapitre/{id}',[\App\Http\Controllers\ChapitreController::class,'show']);
 
 Route::resource('histoires', HistoireController::class);
+
+
+Route::get("/encours/{id}", [HistoireController::class, 'vue'])->name('encours');
+
+Route::get("/newChapitre/{id}", [HistoireController::class, 'ajoutChapitre']);
+Route::post("/newChapitre/{id}", [HistoireController::class, 'ajoutChapitre']);
+
+Route::get("/lienChapitre/{id}", [HistoireController::class, 'link']);
+Route::post("/lienChapitre/{id}", [HistoireController::class, 'link']);
+
+
+Route::get('/apropos', [EquipeController::class, 'index'])->name('equipes.index');
+Route::resource('avis', AvisController::class)->only(['store']);
+
