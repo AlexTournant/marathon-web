@@ -10,7 +10,8 @@
         <h2 class="text-center mb-3">Informations détaillées</h2>
 
         @auth
-            @if(auth()->user()->id === $histoire->user->id)
+
+            @if(auth()->user()->getAuthIdentifier() === $user['id'])
                 <p class="text-center mb-3"><a href="/users/{{$user['id']}}/edit">Modifier le profil</a></p>
             @endif
         @endauth
