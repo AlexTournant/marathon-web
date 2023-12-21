@@ -8,18 +8,19 @@
 }
 
 .presentation {
-    top: 20%; 
-    left: 25%;
+    top: 55%;
+    left: 22%;
     position: absolute;
     color: white;
     width: 15em;
     font-size: 4em;
 }
-
+   
 .carous{
     width: 50em;
     height: 50em;
 }
+
 
 .plus {
     text-align: center;
@@ -86,4 +87,3 @@
     margin-left: 6em;
     margin-right: 6em;
 }
-
