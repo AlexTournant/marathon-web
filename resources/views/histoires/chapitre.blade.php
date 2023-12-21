@@ -6,7 +6,7 @@
         <div class="col-md-6">
             <div class="table-responsive"> <!-- Utilisez table-responsive pour une table à défilement horizontal si nécessaire -->
                 <table class="table table-bordered table-striped">
-                    <thead class="bg-primary text-white">
+                    <thead>
                     <tr>
                         <th>ID</th>
                         <th>Titre Court</th>
@@ -24,6 +24,7 @@
                         <td>Titre Court 2</td>
                         <td>Question 2</td>
                     </tr>
+                    <!-- Ajoutez d'autres lignes selon vos besoins -->
                     </tbody>
                 </table>
             </div>
@@ -100,9 +101,6 @@
                     <input type="text" name="reponse" class="form-control" placeholder="Reponse">
                 </div>
 
-                <!-- ... Autres éléments ... -->
-
-                <!-- Login Button -->
                 <div class="form-group">
                     <button class="btn btn-primary" type="submit">Envoyer</button>
                 </div>
@@ -110,7 +108,7 @@
 
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
-                    <thead class="bg-success text-white">
+                    <thead>
                     <tr>
                         <th>Source</th>
                         <th>Reponse</th>
@@ -128,6 +126,7 @@
                         <td>Reponse 2</td>
                         <td>Destination 2</td>
                     </tr>
+                    <!-- Ajoutez d'autres lignes selon vos besoins -->
                     </tbody>
                 </table>
             </div>
