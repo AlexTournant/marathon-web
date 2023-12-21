@@ -99,3 +99,69 @@ form input{
 b{
     color: #E28413;
 }
+
+.main-container{
+    display: block  ;
+}
+
+.option{
+    display: flex;
+    flex-direction: column;
+   text-align: center;
+   align-items: center;
+   padding-bottom: 30px;
+
+}
+.boutoption{
+    display: flex;
+    flex-direction: column;
+    
+}
+.boutoption button{
+    background-color: #000022;
+}
+.boutoption a{
+    text-decoration: none;
+    color: #E28413;
+}
+
+.option a {
+    text-decoration: none;
+    background-color: #E28413;
+    color : white;
+    padding : 10px;
+    margin:10px;
+    width: 20%;
+    border-radius:1.5em;
+}
+.text{
+    margin: 50px;
+    display: flex;
+    text-align: justify ;
+    background-color:#000022;
+    color: #f5f5f5;
+    padding: 30px;
+    border-radius: 1.5em;
+}
+.text p{
+    display: flex;
+    justify-content: center;
+}
+.imgchap{
+display: flex;
+justify-content: center;
+}
+.imgchap img{
+ width: 30%;
+    }
+    
+
+.titre{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Sulphur';
+    background-color: #E28413;
+    color: #f5f5f5;
+}
+
+

@@ -1,24 +1,29 @@
 <x-layout>
-        <div>
+        
+        <div class="titre">
                 {{$chapitre["titrecourt"]}}
         </div>
+        <div class="imgchap">
         @if(str_starts_with("chapitres/",$chapitre->media))
 {{--                <img src="{{ \Illuminate\Support\Facades\Storage::url($chapitre->media)}}" >--}}
                 <img src="{{$chapitre->media}}" >
         @else
                 <img src="{{$chapitre->media}}" >
         @endif
-        <div>
-                {{$chapitre["texte"]}}
         </div>
-        <div>
-                <button><a href="/index">Retourner a l'accueil</a></button>
 
+        <div class="text">
+            <p>    {{$chapitre["texte"]}}</p>
+        </div>
+        <div class="boutoption">
+                <div class="option">
                 @if(count($chapitre->suivants)>0)
                         @foreach($chapitre->suivants as $c)
                                 <a href="{{"/chapitre/".$c->id}}">{{$c->pivot->reponse}}</a>
                         @endforeach
                 @endif
+                </div>
+                <button><a href="/index">Retourner a l'accueil</a></button>
 
         </div>
 {{--        "id" => 1--}}
