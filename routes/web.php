@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\HistoireController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',  [HistoireController::class, 'accueil'])->name('accueil');
 
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name("contact");
+Route::get('/contact', [ContactController::class, 'afficherFormulaire']);
+
+Route::get('/formulaire', [ContactController::class, 'show']);
+Route::post('/contact', [ContactController::class, 'traiterFormulaire']);
+
 
 Route::get('/test-vite', function () {
     return view('test-vite');
@@ -34,3 +38,5 @@ Route::resource('users',\App\Http\Controllers\UserController::class);
 Route::get('/chapitre/{id}',[\App\Http\Controllers\ChapitreController::class,'show']);
 
 Route::resource('histoires', HistoireController::class);
+
+Route::get('/apropos', [EquipeController::class, 'index'])->name('equipes.index');
