@@ -39,4 +39,15 @@ Route::get('/chapitre/{id}',[\App\Http\Controllers\ChapitreController::class,'sh
 
 Route::resource('histoires', HistoireController::class);
 
+
+Route::get("/encours/{id}", [HistoireController::class, 'vue'])->name('encours');
+
+Route::get("/newChapitre/{id}", [HistoireController::class, 'ajoutChapitre']);
+Route::post("/newChapitre/{id}", [HistoireController::class, 'ajoutChapitre']);
+
+Route::get("/lienChapitre/{id}", [HistoireController::class, 'link']);
+Route::post("/lienChapitre/{id}", [HistoireController::class, 'link']);
+
+
 Route::get('/apropos', [EquipeController::class, 'index'])->name('equipes.index');
+
