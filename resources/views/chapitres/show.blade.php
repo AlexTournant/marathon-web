@@ -20,11 +20,12 @@
 
         <div>
                 @if(count($chapitre->suivants) === 0)
+                        @auth()
                         @php
                                 $histoire = \App\Models\Histoire::find($chapitre->histoire_id);
                         @endphp
                         {{Auth::user()->terminees()->attach($histoire->id, ['nombre' =>1])}}
-                        <button><a href="/index">Retourner a l'accueil</a></button>
+                        @endauth
 
                 @endif
 
