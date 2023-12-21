@@ -2,19 +2,21 @@
         <div>
                 {{$chapitre["titrecourt"]}}
         </div>
-        <video width="640" height="360" controls>
-                <source src="{{ Vite::asset('resources/video/'.$chapitre["media"])}}" type="video/mp4">
-                Votre navigateur ne supporte pas la balise vidéo.
-        </video>
+        @if(str_starts_with("chapitres/",$chapitre->media))
+{{--                <img src="{{ \Illuminate\Support\Facades\Storage::url($chapitre->media)}}" >--}}
+                <img src="{{$chapitre->media}}" >
+        @else
+                <img src="{{$chapitre->media}}" >
+        @endif
         <div>
                 {{$chapitre["texte"]}}
         </div>
         <div>
-                <button>Retourner a l'accueil</button>
+                <button><a href="/index">Retourner a l'accueil</a></button>
 
                 @if(count($chapitre->suivants)>0)
                         @foreach($chapitre->suivants as $c)
-                                <a href="/histoire/{{$id}}/chapitre/{{$c["id"]}}">{{$c->pivot->reponse}}</a>
+                                <a href="{{"/chapitre/".$c->id}}">{{$c->pivot->reponse}}</a>
                         @endforeach
                 @endif
 

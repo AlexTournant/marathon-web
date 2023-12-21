@@ -1,21 +1,26 @@
 <x-main>
-
-
-
-<div class="container">
-    <div class="content">
-<h1>Connexion</h1>
-        <div class="form-group">
-            <label for="Nom d'utilisateur">Nom d'utilisateur</label>
-            <input type="text" name="nom d'utilisateur" class="form-input" placeholder="Nom d'utilisateur">
-        </div>
-        <div class="form-group">
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" class="form-input" placeholder="Mot de passe">
-        </div>
-<div class='align'><input type="checkbox"><p>Se souvenir de moi</p></div>
-<input class="btn" type="submit">
-<p>Pas encore de compte ? <a href="{{route('register')}}">S'inscrire</a></p>
-</div>
-</div>
+    <div class="wrap">
+        <form class="login-form" action="{{route('login')}}" method="post">
+            @csrf
+            <div class="form-header">
+                <h3>Connexion</h3>
+                <p>Accès au tableau de bord</p>
+            </div>
+            <!--Email Input-->
+            <div class="form-group">
+                <input type="text" name="email" class="form-input" placeholder="email@example.com">
+            </div>
+            <!--Password Input-->
+            <div class="form-group">
+                <input type="password" name="password" class="form-input" placeholder="password">
+            </div>
+            <!--Login Button-->
+            <div class="form-group">
+                <button class="form-button" type="submit">Login</button>
+            </div>
+            <div class="form-footer">
+                Vous n'avez pas de compte ? <a href="{{route('register')}}">Enregistrement</a>
+            </div>
+        </form>
+    </div><!--/.wrap-->
 </x-main>
