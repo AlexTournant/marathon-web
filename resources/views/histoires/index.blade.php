@@ -20,6 +20,17 @@
                             <p class="card-text">Genre: <a href="{{route('genre', $histoire->genre->id)}}"> {{  $histoire->genre->label }} </a></p>
                             <p class="card-text">Genre: <a href="{{route('genre', $histoire->genre->id)}}"> En savoir plus </a></p>
 
+                            @auth
+                                @php
+                                    $userCompletedStory = Auth::user()->terminees->contains($histoire);
+                                @endphp
+
+                                @if ($userCompletedStory)
+                                    L'utilisateur a terminé cette histoire.
+                                @else
+                                    L'utilisateur n'a pas terminé cette histoire.
+                                @endif
+                            @endauth
                         </div>
                     </div>
                 </div>
