@@ -13,18 +13,18 @@ class EquipeController extends Controller
     {
         $equipe= [
             'nomEquipe'=>"L'Ekip",
-            'logo'=>"/public/images/logo.png",
+            'logo'=>"/images/ekip.jpeg",
             'slogan'=>"L'Ekip on est là",
             'localisation'=>"04X",
             'membres'=> [
-                [ 'nom'=>"Ballet",'prenom'=>"Dylan", 'image'=>"/public/images/dylan.png", 'fonctions'=>["développeur"] ],
-                [ 'nom'=>"Tournant",'prenom'=>"Alex", 'image'=>"/public/images/alex.png", 'fonctions'=>["développeur"] ],
-                [ 'nom'=>"Demory",'prenom'=>"Mael", 'image'=>"/public/images/mael.png", 'fonctions'=>["validateur","développeur"] ],
-                [ 'nom'=>"Fournier",'prenom'=>"Corentin", 'image'=>"/public/images/corentin.png", 'fonctions'=>["développeur"] ],
-                [ 'nom'=>"Elhajali",'prenom'=>"Lola", 'image'=>"/public/images/prenom.png", 'fonctions'=>["concepteur"] ],
-                [ 'nom'=>"Honore",'prenom'=>"Clara", 'image'=>"/public/images/clara.png", 'fonctions'=>["développeur", "concepteur"] ],
-                [ 'nom'=>"Maison",'prenom'=>"Remy", 'image'=>"/public/images/remy.png", 'fonctions'=>["développeur", "concepteur"] ],
-                [ 'nom'=>"Cohen",'prenom'=>"Simon", 'image'=>"/public/images/simon.png", 'fonctions'=>["développeur", "concepteur"] ],
+                [ 'nom'=>"Ballet",'prenom'=>"Dylan", 'image'=>"/images/Dylan.jpg", 'fonctions'=>["développeur"] ],
+                [ 'nom'=>"Tournant",'prenom'=>"Alex", 'image'=>"/images/Alex.jpg", 'fonctions'=>["développeur"] ],
+                [ 'nom'=>"Demory",'prenom'=>"Mael", 'image'=>"/images/Mael.jpg", 'fonctions'=>["validateur","développeur"] ],
+                [ 'nom'=>"Fournier",'prenom'=>"Corentin", 'image'=>"/images/Corentin.jpg", 'fonctions'=>["développeur"] ],
+                [ 'nom'=>"Elhajali",'prenom'=>"Lola", 'image'=>"/images/Lola.jpg", 'fonctions'=>["concepteur"] ],
+                [ 'nom'=>"Honore",'prenom'=>"Clara", 'image'=>"/images/Clara.jpg", 'fonctions'=>["développeur", "concepteur"] ],
+                [ 'nom'=>"Maison",'prenom'=>"Remy", 'image'=>"/images/Remy.jpg", 'fonctions'=>["développeur", "concepteur"] ],
+                [ 'nom'=>"Cohen",'prenom'=>"Simon", 'image'=>"/images/Simon.jpg", 'fonctions'=>["développeur", "concepteur"] ],
             ],
             'autres'=>"Autre chose",
         ];

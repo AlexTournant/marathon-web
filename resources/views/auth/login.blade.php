@@ -1,10 +1,11 @@
-<x-main>
+<x-guest-layout>
     <div class="wrap">
+        <div class="container">
+            <div class="content">
         <form class="login-form" action="{{route('login')}}" method="post">
             @csrf
             <div class="form-header">
                 <h3>Connexion</h3>
-                <p>Accès au tableau de bord</p>
             </div>
             <!--Email Input-->
             <div class="form-group">
@@ -16,11 +17,13 @@
             </div>
             <!--Login Button-->
             <div class="form-group">
-                <button class="form-button" type="submit">Login</button>
+                <button class="btn form-button" type="submit">Login</button>
             </div>
             <div class="form-footer">
                 Vous n'avez pas de compte ? <a href="{{route('register')}}">Enregistrement</a>
             </div>
         </form>
     </div><!--/.wrap-->
-</x-main>
+        </div>
+    </div>
+</x-guest-layout>
