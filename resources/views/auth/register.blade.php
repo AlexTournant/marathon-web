@@ -1,14 +1,14 @@
-@extends("templates.app")
+<x-main>
 
-@section('content')
-<form action="{{route("register")}}" method="post">
-    @csrf
-    <input type="text" name="name" required placeholder="Name" /><br />
-    <input type="email" name="email" required placeholder="Email" /><br />
-    <input type="password" name="password" required placeholder="password" /><br />
-    <input type="password" name="password_confirmation" required placeholder="password" /><br />
-    <input type="submit" /><br />
-</form>
-Déjà un compte ? <a href="{{route("login")}}">Connectez vous</a>
-
-@endsection
+<div class="container">
+    <div class="content">
+<h1>Inscription</h1>
+<input type="text" placeholder="Nom d'utilisateur">
+<input type="text" placeholder="E-mail">
+<input type="text" placeholder="Mot de Passe">
+<input type="text" placeholder="Confirmer mot de passe">
+<input class="btn" type="submit">
+<p>Déjà inscrit ? <a href="{{route('login')}}">Se connecter</a></p>
+</div>
+</div>
+</x-main>

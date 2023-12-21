@@ -1,12 +1,15 @@
-@extends("templates.app")
+<x-main>
 
-@section('content')
 
-    <form action="{{route("login")}}" method="post">
-        @csrf
-        <input type="email" name="email" required placeholder="Email" /><br />
-        <input type="password" name="password" required placeholder="password" /><br />
-        Remember me<input type="checkbox" name="remember"   /><br />
-        <input type="submit" /><br />
-    </form>
-@endsection
+
+<div class="container">
+    <div class="content">
+<h1>Connexion</h1>
+<input type="text" placeholder="Nom d'utilisateur">
+<input type="text" placeholder="Mot de passe">
+<div class='align'><input type="checkbox"><p>Se souvenir de moi</p></div>
+<input class="btn" type="submit">
+<p>Pas encore de compte ? <a href="{{route('register')}}">S'inscrire</a></p>
+</div>
+</div>
+</x-main>
