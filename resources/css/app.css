@@ -132,18 +132,11 @@ b{
     display: block  ;
 }
 
-.option{
-    display: flex;
-    flex-direction: column;
-   text-align: center;
-   align-items: center;
-   padding-bottom: 30px;
 
-}
 .boutoption{
     display: flex;
     flex-direction: column;
-    
+    text-align: center;
 }
 .boutoption button{
     background-color: #000022;
@@ -155,13 +148,12 @@ b{
 
 
 .option a {
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    color: #f5f5f5;
     background-color: #E28413;
-    color : white;
-    padding : 10px;
-    margin:10px;
-    width: 20%;
-    border-radius:1.5em;
+    border-radius: 20px;
+    margin: 14px;
 }
 .text{
     margin: 50px;
