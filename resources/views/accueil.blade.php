@@ -1,10 +1,11 @@
 <x-main>
     <main>
-<h1 class='presentation'>Venez découvrir de nouvelles histoires totalement inédites !</h1>
-<img class='fond' src="{{ asset('images/histoires.jpg') }}">
-
+        <div>
+            <img class='fond' src="{{ asset('images/histoires.jpg') }}">
+            <h1 class='presentation'>Venez découvrir de nouvelles histoires totalement inédites !</h1>
+        </div>
 <h1 id='titre1'>Histoires</h1>
-<p class="plus">voir <a href="{{route('histoires.index')}}">plus</a></p>
+<h3 class="plus">voir <a href="{{route('histoires.index')}}">plus</a></h3>
 
 <div class='hist'>
     <div class="vignette">
