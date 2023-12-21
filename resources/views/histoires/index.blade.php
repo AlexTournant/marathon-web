@@ -4,7 +4,8 @@
         <a href="{{ route('histoires.create') }}" class="btn">Nouvelle histoire</a>
 
         <div class="row">
-            @foreach($histoires as $histoire)
+            @foreach($histoires as $histoire )
+                @if($histoire->active==1 or $histoire->user_id===Auth::id())
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <img src="{{ asset($histoire->photo) }}" class="card-img-top" alt="{{ $histoire->titre }}">
@@ -13,9 +14,11 @@
                                 <a href="{{ route('histoires.show', $histoire->id) }}">{{ $histoire->titre }}</a>
                             </h5>
                             <p class="card-text">{{ $histoire->pitch }}</p>
-                            <p class="card-text"><small class="text-muted">{{ $histoire->active ? 'Actif' : 'Inactif' }}</small></p>
+                            @auth()
+                                <p class="card-text"><small class="text-muted">{{ $histoire->active ? 'Actif' : 'Inactif' }}</small></p>
+                            @endauth
                             <p class="card-text">
-                                Utilisateur: <a href="{{ route('users.show', $histoire->user->id) }}">{{ $histoire->user->id}}</a>
+                                Utilisateur: <a href="{{ route('users.show', $histoire->user->id) }}">{{ $histoire->user->name}}</a>
                             </p>
                             <p class="card-text">Genre: <a href="{{route('genre', $histoire->genre->id)}}"> {{  $histoire->genre->label }} </a></p>
                             <p class="card-text">Genre: <a href="{{route('genre', $histoire->genre->id)}}"> En savoir plus </a></p>
@@ -34,6 +37,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             @endforeach
         </div>
     </div>
