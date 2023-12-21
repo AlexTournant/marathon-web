@@ -97,10 +97,7 @@ body {
     display: flex;
     width: 100vw;
     height: 85vh;
-    justify-content: center;
-    align-items: center;
-}
-
+}  
 .textePage {
     font-family: "Arial Black", sans-serif;
     font-size: 10rem;
