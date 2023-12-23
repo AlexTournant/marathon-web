@@ -3,12 +3,10 @@
         <div>
             <img class='fond' src="{{ asset('images/histoires.jpg') }}">
             <h1 class='presentation'>Venez découvrir de nouvelles histoires totalement inédites !</h1>
+            <h3 class='lien'><a href="{{route('histoires.index')}}" style="text-decoration: none;color: #f5f5f5;">voir plus</a></h3>
         </div>
-<h1 id='titre1'>Histoires</h1>
-<h3 class="plus">voir <a href="{{route('histoires.index')}}">plus</a></h3>
-
-
         <div class="row" style="max-width: 99%">
+            <h1 class='text-center ' id='titre1'>Histoires</h1>
             @foreach($histoires as $histoire)
                 <div class="col-md-4 mb-4">
                     <div class="card" style="margin-left: 50px">
