@@ -1,8 +1,9 @@
 <x-layout>
     <div class="container">
         <h1>{{$titre}}</h1>
+        @auth()
         <a href="{{ route('histoires.create') }}" class="btn">Nouvelle histoire</a>
-
+        @endauth
         <div class="row">
             @foreach($histoires as $histoire )
                 @if($histoire->active==1 or $histoire->user_id===Auth::id())
