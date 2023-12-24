@@ -116,6 +116,10 @@ padding : 30px
     border-radius: 1em;
     width: 15%;
 }
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
 
 .text-center{
     display: flex;

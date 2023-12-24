@@ -24,8 +24,15 @@
                     </tbody>
                 </table>
             </div>
-            <button class="btn btn-primary"><a href="/activate/{{$id}}">ACTIVER</a></button>
-            <button class="btn btn-success"><a>TESTER</a></button>
+            <button class="btn btn-primary"><a href="/activate/{{$id}}" style="text-decoration: none;color: white">
+                    @if(\App\Models\Histoire::find($id)->active===0)
+                        Activer
+                    @else
+                        Desactiver
+                    @endif
+                </a>
+            </button>
+            <button class="btn btn-success"><a href="{{route("histoires.test",['id'=>\App\Models\Histoire::find($id)])}}" style="text-decoration: none;color: white">TESTER</a></button>
             <h3>Chapitre de l'histoire</h3>
 
 

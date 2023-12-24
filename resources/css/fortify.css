@@ -2,6 +2,10 @@
     margin: 0 auto;
     font-family: 'Sulphur Point', sans-serif;
 }
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
 
 .container {
     background-color: lightgrey;

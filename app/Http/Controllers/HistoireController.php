@@ -214,10 +214,16 @@ class HistoireController extends Controller
 
     public function activate(string $id){
         $histoire=Histoire::find($id);
-        $histoire->active=true;
+        $histoire->active=!$histoire->active;
         $histoire->save();
         return redirect()->route('encours', ['id' => $id])->with('type', 'primary')->with('msg', 'Histoire activé avec succès');
     }
 
-
+    public function test(Request $request, string $id)
+    {
+        $histoire = Histoire::find($id);
+        $titre = $request->get('action', 'show') == 'show' ? "Détails de la scène" : "Suppression d'une scène";
+        return view('histoires.test', ['titre' => $titre, 'histoire' => $histoire,
+            'action' => $request->get('action', 'show')]);
+    }
 }

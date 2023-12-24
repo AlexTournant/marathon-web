@@ -36,7 +36,6 @@ class ChapitreController extends Controller
      */
     public function show(string $id)
     {
-//        Scene::with('notes')->get()[$i]['pivot']
         $chapitre=Chapitre::find($id);
         return view('chapitres.show',['chapitre'=>$chapitre]);
     }
@@ -63,5 +62,10 @@ class ChapitreController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function test(string $id)
+    {
+        $chapitre=Chapitre::find($id);
+        return view('chapitres.test',['chapitre'=>$chapitre]);
     }
 }

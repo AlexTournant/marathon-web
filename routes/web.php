@@ -55,3 +55,5 @@ Route::post("/lienChapitre/{id}", [HistoireController::class, 'link']);
 Route::get('/apropos', [EquipeController::class, 'index'])->name('equipes.index');
 Route::resource('avis', AvisController::class)->only(['store']);
 
+Route::get("/testHistoires/{id}", [HistoireController::class, 'test'])->name("histoires.test");
+Route::get("/testChapitre/{id}", [\App\Http\Controllers\ChapitreController::class, 'test'])->name("chapitres.test");
