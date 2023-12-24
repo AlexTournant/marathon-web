@@ -24,8 +24,8 @@
                     </tbody>
                 </table>
             </div>
-            <button class="btn btn-primary">ACTIVATE</button>
-            <button class="btn btn-success">TESTER</button>
+            <button class="btn btn-primary"><a href="/activate/{{$id}}">ACTIVER</a></button>
+            <button class="btn btn-success"><a>TESTER</a></button>
             <h3>Chapitre de l'histoire</h3>
 
 

@@ -200,7 +200,7 @@ class HistoireController extends Controller
 
 
         // redirection vers la page qui affiche la liste des tâches
-        return redirect()->route('encours', ['id' => $id])->with('type', 'primary')->with('msg', 'Histoire ajoutée avec succès');
+        return redirect()->route('encours', ['id' => $id])->with('type', 'primary')->with('msg', 'chapitres lier avec succès');
 
     }
 
@@ -210,6 +210,13 @@ class HistoireController extends Controller
         $genres = Genre::all();
 
         return view('histoires.accueil', ['histoires' => $troisHistoires, 'genres' => $genres]);
+    }
+
+    public function activate(string $id){
+        $histoire=Histoire::find($id);
+        $histoire->active=true;
+        $histoire->save();
+        return redirect()->route('encours', ['id' => $id])->with('type', 'primary')->with('msg', 'Histoire activé avec succès');
     }
 
 

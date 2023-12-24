@@ -39,6 +39,8 @@ Route::resource('users',\App\Http\Controllers\UserController::class);
 Route::get('/chapitre/{id}',[\App\Http\Controllers\ChapitreController::class,'show']);
 
 Route::resource('histoires', HistoireController::class);
+Route::get("/activate/{id}", [HistoireController::class, 'activate']);
+Route::post("/activate/{id}", [HistoireController::class, 'activate']);
 
 
 Route::get("/encours/{id}", [HistoireController::class, 'vue'])->name('encours');
