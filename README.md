@@ -1,7 +1,5 @@
 ## Histoires dont vous êtes le héros
 
-Groupe test but23_groupeTT
-
 ## Version initiale
 
 Pour lancer avec succès une première version de votre site web pendant la phase de développement, il faut exécuter les
