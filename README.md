@@ -79,7 +79,7 @@ l'adresse [http://localhost:8000](http://localhost:8000)
 
 # Diagramme de classes :
 
-![image.png](./resources/doc/images/diagramme.png)
+![image.png](./resources/docs/images/diagramme.png)
 (Diagramme de classes)
 
 ### Travail réalisé :
